@@ -1,16 +1,13 @@
-```javascript
-// script.js
-
 // Mobile hamburger menu
-const hamburger = document.getElementById("hamburger");
+const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
+menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll(".nav-links a").forEach((link) => {
+// Close mobile menu after clicking a link
+document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("active");
   });
@@ -20,12 +17,11 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 const revealElements = document.querySelectorAll(".reveal");
 
 const revealOnScroll = () => {
-  revealElements.forEach((element) => {
-    const windowHeight = window.innerHeight;
+  revealElements.forEach(element => {
     const elementTop = element.getBoundingClientRect().top;
-    const revealPoint = 120;
+    const windowHeight = window.innerHeight;
 
-    if (elementTop < windowHeight - revealPoint) {
+    if (elementTop < windowHeight - 100) {
       element.classList.add("active");
     }
   });
@@ -34,14 +30,10 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-// Contact form demo behavior
+// Contact form placeholder behavior
 const contactForm = document.querySelector(".contact-form");
 
-contactForm.addEventListener("submit", (event) => {
+contactForm.addEventListener("submit", event => {
   event.preventDefault();
-  alert("Thank you! This form is ready for future backend integration.");
-  contactForm.reset();
+  alert("Thank you! This form is a front-end placeholder. Connect it to a form service later.");
 });
-```
-
-::יני
