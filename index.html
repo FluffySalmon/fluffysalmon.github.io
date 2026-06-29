@@ -1,5 +1,3 @@
-```html
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,43 +7,37 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <a href="#hero" class="logo">Chloe Chan</a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#music">Music</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#videos">Videos</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="hamburger" id="hamburger">☰</button>
-  </header>
+  <nav class="navbar">
+    <a href="#home" class="logo">Chloe Chan</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <section id="hero" class="hero">
-    <div class="hero-overlay"></div>
+  <header id="home" class="hero">
     <div class="hero-content reveal">
       <p class="eyebrow">Composer • Clarinetist • Pianist</p>
       <h1>Chloe Chan</h1>
-      <p class="tagline">Cinematic soundscapes, orchestral colour, and electric stage energy.</p>
+      <p class="tagline">
+        Cinematic worlds, orchestral colors, neon grooves, and stories told through sound.
+      </p>
       <div class="hero-buttons">
         <a href="#music" class="btn primary">Listen Now</a>
         <a href="#contact" class="btn secondary">Book Me</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section id="about" class="section about reveal">
-    <div class="section-header">
-      <p class="eyebrow">About the Artist</p>
-      <h2>Where film score meets live performance.</h2>
-    </div>
-
-    <div class="about-grid">
-      <div class="artist-card">
-        <div class="photo-placeholder">Artist Photo</div>
-      </div>
-
+  <main>
+    <section id="about" class="section about reveal">
       <div>
+        <p class="section-label">About</p>
+        <h2>Music for film, games, stages, and stories.</h2>
         <p>
           Chloe Chan is currently a recent graduate under Berklee College of Music,
           recently receiving a Bachelor Degree of Arts in Music Composition for Film,
@@ -54,117 +46,102 @@
         </p>
         <p>
           During secondary school, Chloe joined the Symphonic Band CCA, playing
-          Clarinet, and played from 2015 till now. Since then, she received multiple
-          diplomas in music performance and composition. She is also a member of
-          NOVOwinds as a Clarinetist, Pianist, and occasionally does arrangements
-          and co-produces their trailers. Outside of music composition and production,
-          she is also a piano teacher.
+          clarinet, and has played from 2015 till now. Since then, she received
+          multiple diplomas in music performance and composition. She is also a
+          member of NOVOwinds as a clarinetist and pianist, and occasionally does
+          arrangements and co-produces their trailers.
         </p>
+        <p>
+          Outside of music composition and production, she is also a piano teacher.
+        </p>
+        <p class="influences">
+          Influences: Orchestra, Rock, Electroswing, Big Band, J-pop, HOYOmix
+        </p>
+      </div>
 
-        <div class="influences">
-          <span>Orchestra</span>
-          <span>Rock</span>
-          <span>Electroswing</span>
-          <span>Big Band</span>
-          <span>J-Pop</span>
-          <span>HOYOMiX</span>
+      <div class="artist-card">
+        <div class="photo-placeholder">Artist Photo</div>
+        <h3>Sound Palette</h3>
+        <p>Orchestral shimmer, rock energy, swing rhythm, and game-score atmosphere.</p>
+      </div>
+    </section>
+
+    <section id="music" class="section reveal">
+      <p class="section-label">Music</p>
+      <h2>Featured Release</h2>
+
+      <div class="music-card">
+        <div class="album-art">♪</div>
+        <div>
+          <h3>bounce</h3>
+          <p>by FluffySalmon</p>
+          <audio controls>
+            <source src="" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <div class="platforms">
+            <a href="#" target="_blank">Spotify</a>
+            <a href="#" target="_blank">Apple Music</a>
+            <a href="#" target="_blank">YouTube</a>
+            <a href="#" target="_blank">SoundCloud</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="music" class="section music reveal">
-    <div class="section-header">
-      <p class="eyebrow">Featured Release</p>
-      <h2>bounce by FluffySalmon</h2>
-    </div>
+    <section id="gallery" class="section reveal">
+      <p class="section-label">Gallery</p>
+      <h2>Live moments and visual worlds.</h2>
 
-    <div class="music-card">
-      <div class="album-art">bounce</div>
-      <div class="track-info">
-        <h3>bounce by FluffySalmon</h3>
-        <p>A vibrant track placeholder for streaming platforms and embedded players.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">Performance Photo</div>
+        <div class="gallery-item">Album Art</div>
+        <div class="gallery-item">Studio Session</div>
+        <div class="gallery-item">Clarinet Recital</div>
+        <div class="gallery-item">Piano Teaching</div>
+        <div class="gallery-item">Film Score Moodboard</div>
+      </div>
+    </section>
 
-        <audio controls>
-          <source src="assets/bounce-by-fluffysalmon.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
+    <section id="videos" class="section reveal">
+      <p class="section-label">Videos</p>
+      <h2>Featured Video</h2>
 
-        <div class="platforms">
-          <a href="#">Spotify</a>
-          <a href="#">Apple Music</a>
-          <a href="#">YouTube</a>
-          <a href="#">SoundCloud</a>
+      <div class="video-card">
+        <div class="video-placeholder">
+          <p>Love, Sam (FULL GAME)</p>
+          <span>YouTube / gameplay video embed placeholder</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="gallery" class="section gallery reveal">
-    <div class="section-header">
-      <p class="eyebrow">Gallery</p>
-      <h2>Performance moments and album visuals.</h2>
-    </div>
+    <section id="contact" class="section contact reveal">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2>Bookings, collaborations, and scoring work.</h2>
+        <p>Email: <a href="mailto:booking@example.com">booking@example.com</a></p>
 
-    <div class="gallery-grid">
-      <div class="gallery-item">Stage Lights</div>
-      <div class="gallery-item">Clarinet</div>
-      <div class="gallery-item">Piano</div>
-      <div class="gallery-item">Album Art</div>
-      <div class="gallery-item">Studio</div>
-      <div class="gallery-item">Live Set</div>
-    </div>
-  </section>
-
-  <section id="videos" class="section videos reveal">
-    <div class="section-header">
-      <p class="eyebrow">Videos</p>
-      <h2>Love, Sam (FULL GAME)</h2>
-    </div>
-
-    <div class="video-card">
-      <div class="video-placeholder">
-        <p>Embedded YouTube / gameplay video placeholder</p>
-        <span>Love, Sam (FULL GAME)</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section contact reveal">
-    <div class="section-header">
-      <p class="eyebrow">Contact</p>
-      <h2>Bookings, lessons, collaborations.</h2>
-    </div>
-
-    <div class="contact-grid">
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="6" required></textarea>
-        <button class="btn primary" type="submit">Send Message</button>
-      </form>
-
-      <div class="contact-info">
-        <h3>Booking Email</h3>
-        <p><a href="mailto:booking@example.com">booking@example.com</a></p>
-
-        <h3>Social Links</h3>
         <div class="quick-links">
-          <a href="#">Instagram</a>
-          <a href="#">YouTube</a>
-          <a href="#">TikTok</a>
-          <a href="#">LinkedIn</a>
-        </div>
-
-        <h3>Quick Links</h3>
-        <div class="quick-links">
-          <a href="#music">Music</a>
+          <a href="#music">Listen</a>
           <a href="#gallery">Gallery</a>
           <a href="#videos">Videos</a>
         </div>
+
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">LinkedIn</a>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Your email" required />
+        <textarea placeholder="Your message" rows="6" required></textarea>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     <p>© 2026 Chloe Chan. All rights reserved.</p>
@@ -173,4 +150,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-```
