@@ -213,23 +213,27 @@ fetch('portfolio.csv')
         // creates, so a clean blockquote means a clean iframe.
         const bq = wrapper.querySelector('blockquote');
         if (bq) bq.removeAttribute('style');
-        // Watch for the SDK inserting its iframe, then lock its inline styles.
-        // The SDK sets style.cssText (inline) and later the height attribute via
-        // postMessage — both beat stylesheet rules, so we override them here.
+        // Watch for the SDK inserting its iframe, then fix only what breaks layout:
+        // clear position:absolute and width constraints so the iframe flows in the
+        // column. Let the SDK's postMessage height updates apply normally.
         const obs = new MutationObserver(() => {
           const igFrame = wrapper.querySelector('iframe');
           if (!igFrame) return;
           obs.disconnect();
-          // Overwrite inline style completely
-          igFrame.style.cssText =
-            'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-          // Also clear the height attribute the SDK sets via postMessage resize
+          // Reset SDK's inline styles — keep height alone so SDK can size it
+          igFrame.style.position = 'static';
+          igFrame.style.width    = '100%';
+          igFrame.style.left     = '';
+          igFrame.style.top      = '';
+          igFrame.style.minWidth = '0';
           igFrame.removeAttribute('height');
-          // Re-observe only attribute changes on the iframe to keep removing height
+          // Re-observe: each time SDK updates style/height, re-apply our overrides
           const attrObs = new MutationObserver(() => {
-            igFrame.style.cssText =
-              'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
-            igFrame.removeAttribute('height');
+            igFrame.style.position = 'static';
+            igFrame.style.width    = '100%';
+            igFrame.style.left     = '';
+            igFrame.style.top      = '';
+            igFrame.style.minWidth = '0';
           });
           attrObs.observe(igFrame, { attributes: true, attributeFilter: ['style', 'height'] });
         });

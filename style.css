@@ -251,29 +251,19 @@ h3 {
   font-size: 1rem;
 }
 
-/* Instagram SDK embed wrapper.
-   The SDK reads the blockquote's clientWidth to set its iframe width, then
-   resizes via postMessage. We give it a fixed-height box matching 16:9 so the
-   card stays in a two-column layout identical to YouTube embeds. */
+/* Instagram SDK embed wrapper — natural height, full width of the media column */
 .embed-wrapper.embed-instagram {
   position: relative;
   width: 100%;
-  /* Fixed pixel height — the SDK sizes its iframe by clientWidth, and after
-     the blockquote style is stripped it will fill 100% of this box. */
-  height: 0;
-  padding-top: 56.25%;
   background: var(--midnight);
-  overflow: hidden;
   border-radius: 16px;
+  overflow: hidden;
 }
 
-/* Pre-SDK blockquote placeholder — fill the box, no inline sizing */
+/* Pre-SDK blockquote placeholder */
 .embed-wrapper.embed-instagram blockquote {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  display: block !important;
   width: 100% !important;
-  height: 100% !important;
   max-width: none !important;
   min-width: 0 !important;
   margin: 0 !important;
@@ -282,14 +272,11 @@ h3 {
   border: none !important;
 }
 
-/* SDK-injected iframe — force it to fill the wrapper regardless of
-   any inline style the SDK copies from the (now stripped) blockquote */
+/* SDK-injected iframe — width fills column; height is set by JS from SDK signal */
 .embed-wrapper.embed-instagram iframe {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  display: block !important;
+  position: static !important;
   width: 100% !important;
-  height: 100% !important;
   border: none !important;
   border-radius: 16px;
 }
