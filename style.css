@@ -196,11 +196,93 @@ h3 {
   text-align: center;
 }
 
+/* ── music grid (portfolio cards) ── */
+.music-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
 .music-card {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 32px;
+  align-items: start;
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+.music-card-media {
+  width: 100%;
+}
+
+.embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--midnight);
+}
+
+.embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+}
+
+.embed-wrapper.embed-link {
+  padding-top: 0;
+  min-height: 180px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.embed-external-btn {
+  font-size: 1rem;
+}
+
+.music-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.music-category {
+  display: inline-block;
+  background: rgba(255, 79, 216, 0.18);
+  color: var(--pink);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.music-year {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.music-card-info h3 {
+  font-size: 1.5rem;
+  margin: 4px 0;
+}
+
+.music-card-info p {
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .album-art {
@@ -255,21 +337,58 @@ audio {
   box-shadow: 0 20px 40px rgba(255, 79, 216, 0.25);
 }
 
-.video-placeholder {
-  flex-direction: column;
-  min-height: 360px;
-}
-
-.video-placeholder p {
-  color: var(--text);
-  font-size: 1.7rem;
-  margin-bottom: 8px;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* ── influences list in about card ── */
+.influences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.influence-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--silver);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.influence-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* ── contact section layout ── */
+.contact {
+  align-items: start;
+}
+
+.contact-text p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.contact-link-item {
+  margin-bottom: 12px;
+  color: var(--silver);
+}
+
+.contact-link-item a {
+  color: var(--pink);
+  transition: 0.3s;
+}
+
+.contact-link-item a:hover {
+  color: var(--text);
 }
 
 input,
@@ -328,10 +447,6 @@ footer {
   .about,
   .contact,
   .music-card {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid {
     grid-template-columns: 1fr;
   }
 

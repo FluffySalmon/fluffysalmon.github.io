@@ -1,45 +1,88 @@
-Chloe Chan
-		HOME
-		ABOUT
-		PORTFOLIO
-		CONTACT
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chloe Chan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-COMPOSER · CLARINETIST · EDUCATOR
-Chloe Chan
-Music Composition for Film, TV & Games — Berklee College of Music
-Explore My Work
-ABOUT ME
-Biography
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Chloe Chan</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-Chloe Chan is a recent graduate of Berklee College of Music, holding a Bachelor of Arts in Music Composition for Film, TV and Games. Her musical journey began at age four when she started piano, going on to pass numerous exams with ABRSM and YAMAHA.
-During secondary school she joined the Symphonic Band CCA as a clarinetist — a passion she has carried from 2015 to the present. Since then she has earned multiple diplomas in both music performance and composition.
-Chloe is also a proud member of NOVOwinds, performing as clarinetist and pianist, and occasionally creating arrangements and co-producing their promotional trailers. Outside the studio she works as a dedicated piano teacher.
-Musical Influences
-🎓
-Berklee College of Music
-B.A. — Music Composition for Film, TV & Games
-🎹
-Pianist since age 4
-ABRSM & YAMAHA certified · Piano educator
-🎵
-Clarinetist · NOVOwinds
-Symphonic Band CCA · 2015 – present
-🎬
-Composer & Arranger
-Film scores, game music, band arrangements & trailer production
-MY WORK
-Portfolio
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="eyebrow">Composer · Clarinetist · Educator</p>
+      <h1>Chloe<br>Chan</h1>
+      <p class="tagline">Music Composition for Film, TV &amp; Games — Berklee College of Music</p>
+      <a href="#music" class="btn primary">Explore My Work</a>
+      <a href="#contact" class="btn secondary">Get In Touch</a>
+    </div>
+  </section>
 
-All
-Loading portfolio…
-GET IN TOUCH
-Let's Collaborate
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about reveal">
+      <div class="about-text">
+        <p class="section-label">About Me</p>
+        <h2>Biography</h2>
+        <div id="about-content">
+          <p>Loading…</p>
+        </div>
+      </div>
+      <div class="artist-card">
+        <div class="photo-placeholder">📸<br><span style="font-size:0.9rem;margin-top:8px;display:block;">Photo coming soon</span></div>
+        <div class="influences" id="influences-content"></div>
+      </div>
+    </div>
+  </section>
 
-Whether you're looking for a composer for your next project, a piano teacher, or a collaborator, feel free to reach out!
+  <!-- MUSIC -->
+  <section class="section" id="music">
+    <div class="reveal">
+      <p class="section-label">My Work</p>
+      <h2>Music &amp; Portfolio</h2>
+    </div>
+    <div id="music-grid" class="music-grid reveal">
+      <p style="color:var(--muted)">Loading portfolio…</p>
+    </div>
+  </section>
 
-Email Me
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="contact reveal">
+      <div class="contact-text">
+        <p class="section-label">Get In Touch</p>
+        <h2>Let's Collaborate</h2>
+        <div id="contact-content">
+          <p>Loading…</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <input type="text" placeholder="Subject" />
+        <textarea rows="5" placeholder="Your message…"></textarea>
+        <button class="btn primary" type="submit">Send Message</button>
+      </div>
+    </div>
+  </section>
 
-YouTube
+  <footer>
+    <p>© Chloe Chan — All rights reserved.</p>
+  </footer>
 
-Instagram
-© Chloe Chan — All rights reserved.
+  <script src="script.js"></script>
+</body>
+</html>
