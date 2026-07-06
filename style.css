@@ -251,6 +251,24 @@ h3 {
   font-size: 1rem;
 }
 
+/* Instagram native blockquote embed — variable height, no 16:9 box */
+.embed-wrapper.embed-instagram {
+  position: static;
+  padding-top: 0;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+}
+
+.embed-wrapper.embed-instagram blockquote.instagram-media {
+  border-radius: 16px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
 .music-card-info {
   display: flex;
   flex-direction: column;

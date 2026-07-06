@@ -106,32 +106,71 @@ fetch('contact.md')
 function parseCSV(text) {
   const lines = text.trim().split('\n');
   const headers = lines[0].split(',').map(h => h.trim());
-  return lines.slice(1).map(line => {
-    // Handle quoted fields containing commas
-    const fields = [];
-    let current = '';
-    let inQuotes = false;
-    for (let i = 0; i < line.length; i++) {
-      const ch = line[i];
-      if (ch === '"') {
-        inQuotes = !inQuotes;
-      } else if (ch === ',' && !inQuotes) {
-        fields.push(current.trim());
-        current = '';
-      } else {
-        current += ch;
+  return lines.slice(1)
+    .map(line => {
+      // Handle quoted fields containing commas
+      const fields = [];
+      let current = '';
+      let inQuotes = false;
+      for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') {
+          inQuotes = !inQuotes;
+        } else if (ch === ',' && !inQuotes) {
+          fields.push(current.trim());
+          current = '';
+        } else {
+          current += ch;
+        }
       }
-    }
-    fields.push(current.trim());
-    const obj = {};
-    headers.forEach((h, i) => { obj[h] = fields[i] || ''; });
-    return obj;
-  });
+      fields.push(current.trim());
+      const obj = {};
+      headers.forEach((h, i) => { obj[h] = fields[i] || ''; });
+      return obj;
+    })
+    // Skip rows that are overflow lines (e.g. a stray <script> tag from an
+    // Instagram embed block that spilled onto its own CSV line)
+    .filter(obj => obj.title && !obj.title.trim().startsWith('<'));
+}
+
+/* ── ensure Instagram embed.js is loaded once ── */
+let igScriptLoaded = false;
+function loadInstagramEmbedScript() {
+  if (igScriptLoaded) {
+    // Script already in DOM — ask the SDK to re-process new blockquotes
+    if (window.instgrm) window.instgrm.Embeds.process();
+    return;
+  }
+  igScriptLoaded = true;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.instagram.com/embed.js';
+  document.body.appendChild(s);
 }
 
 /* ── detect embed type and build embed HTML ── */
-function buildEmbed(url, title) {
-  if (!url) return '';
+function buildEmbed(raw, title) {
+  if (!raw) return '';
+
+  // Instagram <blockquote> embed HTML supplied directly in the CSV cell
+  if (raw.trimStart().startsWith('<blockquote')) {
+    // Extract the canonical permalink from data-instgrm-permalink attribute
+    const permalinkMatch = raw.match(/data-instgrm-permalink="([^"]+)"/);
+    const permalink = permalinkMatch ? permalinkMatch[1].split('?')[0] : null;
+
+    if (permalink) {
+      // Render using Instagram's native oEmbed blockquote approach.
+      // Strip any inline <script> tags that may be embedded in the HTML block —
+      // we load embed.js ourselves once via loadInstagramEmbedScript().
+      const cleanBlockquote = raw.replace(/<script\b[^<]*<\/script>/gi, '').trim();
+      loadInstagramEmbedScript();
+      return `<div class="embed-wrapper embed-instagram">${cleanBlockquote}</div>`;
+    }
+
+    // Couldn't parse permalink — fall through to link button below
+  }
+
+  const url = raw.trim();
 
   // YouTube embed URL
   if (url.includes('youtube.com/embed/')) {
@@ -142,7 +181,7 @@ function buildEmbed(url, title) {
     </div>`;
   }
 
-  // YouTube watch URL → convert to embed
+  // YouTube watch or short URL → convert to embed
   const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/);
   if (ytMatch) {
     return `<div class="embed-wrapper">
@@ -152,7 +191,7 @@ function buildEmbed(url, title) {
     </div>`;
   }
 
-  // Instagram reel — embed not allowed cross-origin easily; show link button
+  // Plain Instagram URL (no blockquote provided)
   if (url.includes('instagram.com')) {
     return `<div class="embed-wrapper embed-link">
       <a href="${url}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
