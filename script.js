@@ -133,41 +133,24 @@ function parseCSV(text) {
     .filter(obj => obj.title && !obj.title.trim().startsWith('<'));
 }
 
-/* ── ensure Instagram embed.js is loaded once ── */
-let igScriptLoaded = false;
-function loadInstagramEmbedScript() {
-  if (igScriptLoaded) {
-    // Script already in DOM — ask the SDK to re-process new blockquotes
-    if (window.instgrm) window.instgrm.Embeds.process();
-    return;
-  }
-  igScriptLoaded = true;
-  const s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.instagram.com/embed.js';
-  document.body.appendChild(s);
-}
-
 /* ── detect embed type and build embed HTML ── */
 function buildEmbed(raw, title) {
   if (!raw) return '';
 
-  // Instagram <blockquote> embed HTML supplied directly in the CSV cell
+  // Instagram <blockquote> embed HTML supplied directly in the CSV cell.
+  // Extract the post/reel ID from data-instgrm-permalink and render a direct
+  // iframe — no SDK required, works reliably after dynamic DOM insertion.
   if (raw.trimStart().startsWith('<blockquote')) {
-    // Extract the canonical permalink from data-instgrm-permalink attribute
-    const permalinkMatch = raw.match(/data-instgrm-permalink="([^"]+)"/);
-    const permalink = permalinkMatch ? permalinkMatch[1].split('?')[0] : null;
-
-    if (permalink) {
-      // Render using Instagram's native oEmbed blockquote approach.
-      // Strip any inline <script> tags that may be embedded in the HTML block —
-      // we load embed.js ourselves once via loadInstagramEmbedScript().
-      const cleanBlockquote = raw.replace(/<script\b[^<]*<\/script>/gi, '').trim();
-      loadInstagramEmbedScript();
-      return `<div class="embed-wrapper embed-instagram">${cleanBlockquote}</div>`;
+    const permalinkMatch = raw.match(/data-instgrm-permalink="https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)\//);
+    if (permalinkMatch) {
+      const reelId = permalinkMatch[1];
+      return `<div class="embed-wrapper">
+        <iframe src="https://www.instagram.com/reel/${reelId}/embed/"
+          title="${title}" frameborder="0" scrolling="no"
+          allowtransparency></iframe>
+      </div>`;
     }
-
-    // Couldn't parse permalink — fall through to link button below
+    // Couldn't extract ID — fall through to link button
   }
 
   const url = raw.trim();
