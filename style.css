@@ -251,38 +251,47 @@ h3 {
   font-size: 1rem;
 }
 
-/* Instagram SDK embed — the SDK replaces the blockquote with its own <iframe>.
-   Keep the same 16:9 responsive box as YouTube so the card stays two-column. */
+/* Instagram SDK embed wrapper.
+   The SDK reads the blockquote's clientWidth to set its iframe width, then
+   resizes via postMessage. We give it a fixed-height box matching 16:9 so the
+   card stays in a two-column layout identical to YouTube embeds. */
 .embed-wrapper.embed-instagram {
   position: relative;
+  width: 100%;
+  /* Fixed pixel height — the SDK sizes its iframe by clientWidth, and after
+     the blockquote style is stripped it will fill 100% of this box. */
+  height: 0;
   padding-top: 56.25%;
   background: var(--midnight);
   overflow: hidden;
   border-radius: 16px;
 }
 
-/* The SDK injects an <iframe> with inline width/height — override so it fills the box */
-.embed-wrapper.embed-instagram iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Pre-SDK blockquote placeholder — fill the box, no inline sizing */
+.embed-wrapper.embed-instagram blockquote {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  border: none;
-  border-radius: 16px;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
-/* The placeholder <blockquote> before the SDK fires — hide its inline sizing */
-.embed-wrapper.embed-instagram blockquote {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* SDK-injected iframe — force it to fill the wrapper regardless of
+   any inline style the SDK copies from the (now stripped) blockquote */
+.embed-wrapper.embed-instagram iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
   width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: 100%;
-  margin: 0 !important;
-  overflow: hidden;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 16px;
 }
 
 .music-card-info {

@@ -206,12 +206,34 @@ fetch('portfolio.csv')
       const embed = buildEmbed(entry.link, entry.title);
 
       if (embed.startsWith('INSTAGRAM:')) {
-        // Inject blockquote as a real live DOM node — the SDK ONLY processes
-        // elements that already exist in the document when it runs or when
-        // instgrm.Embeds.process() is called.
         const wrapper = document.createElement('div');
         wrapper.className = 'embed-wrapper embed-instagram';
         wrapper.innerHTML = embed.slice('INSTAGRAM:'.length);
+        // Strip blockquote inline style — the SDK copies it onto the iframe it
+        // creates, so a clean blockquote means a clean iframe.
+        const bq = wrapper.querySelector('blockquote');
+        if (bq) bq.removeAttribute('style');
+        // Watch for the SDK inserting its iframe, then lock its inline styles.
+        // The SDK sets style.cssText (inline) and later the height attribute via
+        // postMessage — both beat stylesheet rules, so we override them here.
+        const obs = new MutationObserver(() => {
+          const igFrame = wrapper.querySelector('iframe');
+          if (!igFrame) return;
+          obs.disconnect();
+          // Overwrite inline style completely
+          igFrame.style.cssText =
+            'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+          // Also clear the height attribute the SDK sets via postMessage resize
+          igFrame.removeAttribute('height');
+          // Re-observe only attribute changes on the iframe to keep removing height
+          const attrObs = new MutationObserver(() => {
+            igFrame.style.cssText =
+              'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+            igFrame.removeAttribute('height');
+          });
+          attrObs.observe(igFrame, { attributes: true, attributeFilter: ['style', 'height'] });
+        });
+        obs.observe(wrapper, { childList: true, subtree: true });
         mediaDiv.appendChild(wrapper);
         hasInstagram = true;
       } else {
