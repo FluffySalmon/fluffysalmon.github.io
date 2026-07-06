@@ -137,12 +137,22 @@ function parseCSV(text) {
 function buildEmbed(raw, title) {
   if (!raw) return '';
 
-  // Instagram <blockquote> embed HTML in the CSV cell — extract the clean
-  // permalink URL from data-instgrm-permalink and show a link button.
-  // Instagram Reels cannot be embedded cross-origin via iframe without login.
+  // Instagram <blockquote> embed HTML in the CSV cell.
+  // Extract the reel/post ID from data-instgrm-permalink and build the
+  // official /p/{ID}/embed/captioned/ iframe URL that Instagram's own SDK uses.
   if (raw.trimStart().startsWith('<blockquote')) {
-    const m = raw.match(/data-instgrm-permalink="(https:\/\/www\.instagram\.com\/[^"?]+)/);
-    const href = m ? m[1] : 'https://www.instagram.com/';
+    const m = raw.match(/data-instgrm-permalink="https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
+    if (m) {
+      const id = m[1];
+      return `<div class="embed-wrapper embed-instagram">
+        <iframe src="https://www.instagram.com/p/${id}/embed/captioned/"
+          title="${title}" frameborder="0" scrolling="no" allowtransparency
+          allow="encrypted-media"></iframe>
+      </div>`;
+    }
+    // Fallback: plain link if ID can't be parsed
+    const fallback = raw.match(/data-instgrm-permalink="(https:\/\/www\.instagram\.com\/[^"?]+)/);
+    const href = fallback ? fallback[1] : 'https://www.instagram.com/';
     return `<div class="embed-wrapper embed-link">
       <a href="${href}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
         ▶ Watch on Instagram

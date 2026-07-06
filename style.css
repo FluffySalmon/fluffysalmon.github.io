@@ -251,6 +251,11 @@ h3 {
   font-size: 1rem;
 }
 
+/* Instagram /p/{id}/embed/captioned/ iframe — taller than 16:9 due to caption */
+.embed-wrapper.embed-instagram {
+  padding-top: 130%;  /* Instagram captioned embeds are portrait-ish */
+}
+
 .music-card-info {
   display: flex;
   flex-direction: column;
