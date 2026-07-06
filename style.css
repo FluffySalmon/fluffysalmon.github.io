@@ -252,14 +252,37 @@ h3 {
 }
 
 /* Instagram SDK embed — the SDK replaces the blockquote with its own <iframe>.
-   Let the wrapper size naturally around whatever the SDK produces. */
+   Keep the same 16:9 responsive box as YouTube so the card stays two-column. */
 .embed-wrapper.embed-instagram {
-  position: static;
-  padding-top: 0;
-  background: transparent;
-  overflow: visible;
-  display: flex;
-  justify-content: center;
+  position: relative;
+  padding-top: 56.25%;
+  background: var(--midnight);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* The SDK injects an <iframe> with inline width/height — override so it fills the box */
+.embed-wrapper.embed-instagram iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  border-radius: 16px;
+}
+
+/* The placeholder <blockquote> before the SDK fires — hide its inline sizing */
+.embed-wrapper.embed-instagram blockquote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 100%;
+  margin: 0 !important;
+  overflow: hidden;
 }
 
 .music-card-info {
