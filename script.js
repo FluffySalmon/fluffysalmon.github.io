@@ -133,36 +133,21 @@ function parseCSV(text) {
     .filter(obj => obj.title && !obj.title.trim().startsWith('<'));
 }
 
-/* ── detect embed type and build embed HTML ── */
+/* ── build embed HTML string (non-Instagram) or flag as Instagram ── */
+// Returns a plain HTML string for iframes/links, OR the sentinel string
+// "INSTAGRAM:<clean-blockquote-html>" which the grid builder handles specially
+// by appending a real DOM node (so the SDK sees a live element, not innerHTML).
 function buildEmbed(raw, title) {
   if (!raw) return '';
 
-  // Instagram <blockquote> embed HTML in the CSV cell.
-  // Extract the reel/post ID from data-instgrm-permalink and build the
-  // official /p/{ID}/embed/captioned/ iframe URL that Instagram's own SDK uses.
   if (raw.trimStart().startsWith('<blockquote')) {
-    const m = raw.match(/data-instgrm-permalink="https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
-    if (m) {
-      const id = m[1];
-      return `<div class="embed-wrapper embed-instagram">
-        <iframe src="https://www.instagram.com/p/${id}/embed/captioned/"
-          title="${title}" frameborder="0" scrolling="no" allowtransparency
-          allow="encrypted-media"></iframe>
-      </div>`;
-    }
-    // Fallback: plain link if ID can't be parsed
-    const fallback = raw.match(/data-instgrm-permalink="(https:\/\/www\.instagram\.com\/[^"?]+)/);
-    const href = fallback ? fallback[1] : 'https://www.instagram.com/';
-    return `<div class="embed-wrapper embed-link">
-      <a href="${href}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
-        ▶ Watch on Instagram
-      </a>
-    </div>`;
+    // Strip any <script> already baked in — we loaded embed.js in <head>
+    const clean = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').trim();
+    return 'INSTAGRAM:' + clean;
   }
 
   const url = raw.trim();
 
-  // YouTube embed URL
   if (url.includes('youtube.com/embed/')) {
     return `<div class="embed-wrapper">
       <iframe src="${url}" title="${title}" frameborder="0"
@@ -171,7 +156,6 @@ function buildEmbed(raw, title) {
     </div>`;
   }
 
-  // YouTube watch or short URL → convert to embed
   const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/);
   if (ytMatch) {
     return `<div class="embed-wrapper">
@@ -181,7 +165,6 @@ function buildEmbed(raw, title) {
     </div>`;
   }
 
-  // Plain Instagram URL
   if (url.includes('instagram.com')) {
     return `<div class="embed-wrapper embed-link">
       <a href="${url}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
@@ -190,7 +173,6 @@ function buildEmbed(raw, title) {
     </div>`;
   }
 
-  // Fallback: generic link
   return `<div class="embed-wrapper embed-link">
     <a href="${url}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
       ▶ Open Link
@@ -209,16 +191,51 @@ fetch('portfolio.csv')
       return;
     }
 
-    grid.innerHTML = entries.map(entry => `
-      <article class="music-card reveal">
-        <div class="music-card-media">${buildEmbed(entry.link, entry.title)}</div>
+    // Clear the "Loading…" placeholder
+    grid.innerHTML = '';
+
+    let hasInstagram = false;
+
+    entries.forEach(entry => {
+      const article = document.createElement('article');
+      article.className = 'music-card reveal';
+
+      const mediaDiv = document.createElement('div');
+      mediaDiv.className = 'music-card-media';
+
+      const embed = buildEmbed(entry.link, entry.title);
+
+      if (embed.startsWith('INSTAGRAM:')) {
+        // Inject blockquote as a real live DOM node — the SDK ONLY processes
+        // elements that already exist in the document when it runs or when
+        // instgrm.Embeds.process() is called.
+        const wrapper = document.createElement('div');
+        wrapper.className = 'embed-wrapper embed-instagram';
+        wrapper.innerHTML = embed.slice('INSTAGRAM:'.length);
+        mediaDiv.appendChild(wrapper);
+        hasInstagram = true;
+      } else {
+        mediaDiv.innerHTML = embed;
+      }
+
+      article.appendChild(mediaDiv);
+      article.insertAdjacentHTML('beforeend', `
         <div class="music-card-info">
           <span class="music-category">${entry.category || ''}</span>
           <h3>${entry.title || 'Untitled'}</h3>
           <span class="music-year">${entry.year || ''}</span>
           <p>${entry.description || ''}</p>
-        </div>
-      </article>`).join('');
+        </div>`);
+
+      grid.appendChild(article);
+    });
+
+    // All blockquotes are now live in the DOM.
+    // If the SDK already finished loading, process them now.
+    // If it hasn't loaded yet, it will auto-process on load.
+    if (hasInstagram && window.instgrm) {
+      window.instgrm.Embeds.process();
+    }
 
     reveal();
   })

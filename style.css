@@ -251,9 +251,15 @@ h3 {
   font-size: 1rem;
 }
 
-/* Instagram /p/{id}/embed/captioned/ iframe — taller than 16:9 due to caption */
+/* Instagram SDK embed — the SDK replaces the blockquote with its own <iframe>.
+   Let the wrapper size naturally around whatever the SDK produces. */
 .embed-wrapper.embed-instagram {
-  padding-top: 130%;  /* Instagram captioned embeds are portrait-ish */
+  position: static;
+  padding-top: 0;
+  background: transparent;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
 }
 
 .music-card-info {
