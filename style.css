@@ -251,6 +251,21 @@ h3 {
   font-size: 1rem;
 }
 
+/* Instagram blockquote embed — override the 16:9 padding-top; the SDK
+   replaces the blockquote with its own iframe at its own natural height */
+.embed-wrapper.embed-instagram {
+  position: static;
+  padding-top: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.embed-wrapper.embed-instagram blockquote.instagram-media {
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
 .music-card-info {
   display: flex;
   flex-direction: column;

@@ -134,61 +134,69 @@ function parseCSV(text) {
 }
 
 /* ── detect embed type and build embed HTML ── */
+// Returns { html, isInstagram } so the caller knows to activate the SDK
+// after the HTML is inserted into the live DOM.
 function buildEmbed(raw, title) {
-  if (!raw) return '';
+  if (!raw) return { html: '', isInstagram: false };
 
   // Instagram <blockquote> embed HTML supplied directly in the CSV cell.
-  // Extract the post/reel ID from data-instgrm-permalink and render a direct
-  // iframe — no SDK required, works reliably after dynamic DOM insertion.
+  // The blockquote must be live in the DOM before the SDK processes it.
   if (raw.trimStart().startsWith('<blockquote')) {
-    const permalinkMatch = raw.match(/data-instgrm-permalink="https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)\//);
-    if (permalinkMatch) {
-      const reelId = permalinkMatch[1];
-      return `<div class="embed-wrapper">
-        <iframe src="https://www.instagram.com/reel/${reelId}/embed/"
-          title="${title}" frameborder="0" scrolling="no"
-          allowtransparency></iframe>
-      </div>`;
-    }
-    // Couldn't extract ID — fall through to link button
+    // Strip any <script> baked into the block; we load embed.js ourselves.
+    const clean = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').trim();
+    return { html: `<div class="embed-wrapper embed-instagram">${clean}</div>`, isInstagram: true };
   }
 
   const url = raw.trim();
 
   // YouTube embed URL
   if (url.includes('youtube.com/embed/')) {
-    return `<div class="embed-wrapper">
+    return { html: `<div class="embed-wrapper">
       <iframe src="${url}" title="${title}" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
-    </div>`;
+    </div>`, isInstagram: false };
   }
 
   // YouTube watch or short URL → convert to embed
   const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/);
   if (ytMatch) {
-    return `<div class="embed-wrapper">
+    return { html: `<div class="embed-wrapper">
       <iframe src="https://www.youtube.com/embed/${ytMatch[1]}" title="${title}" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
-    </div>`;
+    </div>`, isInstagram: false };
   }
 
   // Plain Instagram URL (no blockquote provided)
   if (url.includes('instagram.com')) {
-    return `<div class="embed-wrapper embed-link">
+    return { html: `<div class="embed-wrapper embed-link">
       <a href="${url}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
         ▶ Watch on Instagram
       </a>
-    </div>`;
+    </div>`, isInstagram: false };
   }
 
   // Fallback: generic link
-  return `<div class="embed-wrapper embed-link">
+  return { html: `<div class="embed-wrapper embed-link">
     <a href="${url}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
       ▶ Open Link
     </a>
-  </div>`;
+  </div>`, isInstagram: false };
+}
+
+/* ── load Instagram embed.js exactly once, after blockquotes are in the DOM ── */
+function activateInstagramEmbeds() {
+  if (window.instgrm) {
+    // SDK already loaded — just re-process any new blockquotes
+    window.instgrm.Embeds.process();
+    return;
+  }
+  // First time: load the script; it auto-processes on load
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.instagram.com/embed.js';
+  document.body.appendChild(s);
 }
 
 /* ── load and render portfolio.csv ── */
@@ -202,19 +210,24 @@ fetch('portfolio.csv')
       return;
     }
 
-    grid.innerHTML = entries.map(entry => `
-      <article class="music-card reveal">
-        <div class="music-card-media">
-          ${buildEmbed(entry.link, entry.title)}
-        </div>
-        <div class="music-card-info">
-          <span class="music-category">${entry.category || ''}</span>
-          <h3>${entry.title || 'Untitled'}</h3>
-          <span class="music-year">${entry.year || ''}</span>
-          <p>${entry.description || ''}</p>
-        </div>
-      </article>
-    `).join('');
+    let hasInstagram = false;
+    grid.innerHTML = entries.map(entry => {
+      const { html, isInstagram } = buildEmbed(entry.link, entry.title);
+      if (isInstagram) hasInstagram = true;
+      return `
+        <article class="music-card reveal">
+          <div class="music-card-media">${html}</div>
+          <div class="music-card-info">
+            <span class="music-category">${entry.category || ''}</span>
+            <h3>${entry.title || 'Untitled'}</h3>
+            <span class="music-year">${entry.year || ''}</span>
+            <p>${entry.description || ''}</p>
+          </div>
+        </article>`;
+    }).join('');
+
+    // Blockquotes are now live in the DOM — safe to activate the SDK
+    if (hasInstagram) activateInstagramEmbeds();
 
     // Re-trigger reveal for newly added cards
     reveal();
