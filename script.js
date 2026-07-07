@@ -102,35 +102,25 @@ fetch('contact.md')
     document.getElementById('contact-content').innerHTML = '<p>Contact content unavailable.</p>';
   });
 
-/* ── CSV parser ── */
-function parseCSV(text) {
-  const lines = text.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.trim());
-  return lines.slice(1)
-    .map(line => {
-      // Handle quoted fields containing commas
-      const fields = [];
-      let current = '';
-      let inQuotes = false;
-      for (let i = 0; i < line.length; i++) {
-        const ch = line[i];
-        if (ch === '"') {
-          inQuotes = !inQuotes;
-        } else if (ch === ',' && !inQuotes) {
-          fields.push(current.trim());
-          current = '';
-        } else {
-          current += ch;
-        }
-      }
-      fields.push(current.trim());
-      const obj = {};
-      headers.forEach((h, i) => { obj[h] = fields[i] || ''; });
-      return obj;
+/* ── Portfolio text parser ──
+   Format: blocks separated by blank lines.
+   Each line: "key: value" or "key:" (empty value)
+   Value is everything after the first colon (and optional space). */
+function parsePortfolio(text) {
+  return text.trim()
+    .split(/\n\s*\n/)          // split on blank lines → one block per entry
+    .map(block => {
+      const entry = {};
+      block.split('\n').forEach(line => {
+        const colon = line.indexOf(':');
+        if (colon === -1) return;
+        const key   = line.slice(0, colon).trim();
+        const value = line.slice(colon + 1).replace(/^ /, ''); // strip one leading space
+        entry[key]  = value;
+      });
+      return entry;
     })
-    // Skip rows that are overflow lines (e.g. a stray <script> tag from an
-    // Instagram embed block that spilled onto its own CSV line)
-    .filter(obj => obj.title && !obj.title.trim().startsWith('<'));
+    .filter(e => e.title);     // skip empty blocks
 }
 
 /* ── build embed HTML ──
@@ -219,11 +209,11 @@ function buildEmbed(raw, title, crop = {}) {
   </div>`;
 }
 
-/* ── load and render portfolio.csv ── */
-fetch('portfolio.csv')
+/* ── load and render portfolio.txt ── */
+fetch('portfolio.txt')
   .then(r => r.text())
   .then(csv => {
-    const entries = parseCSV(csv);
+    const entries = parsePortfolio(csv);
     const grid = document.getElementById('music-grid');
     if (!entries.length) {
       grid.innerHTML = '<p style="color:var(--muted)">No portfolio entries found.</p>';

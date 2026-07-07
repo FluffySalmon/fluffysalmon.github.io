@@ -1,0 +1,29 @@
+title: Novowinds' Notes from The Little Red Dot Trailer
+category: Music Production
+year: 2025
+description: Co-produced music for the promo trailer for NOVOwinds' 2025 Beautiful Sunday Concert : Notes From The Little Red Dot.
+link: <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;"><div style="padding:16px;"></div></blockquote>
+crop_left: 0
+crop_top: 54
+crop_right: 0
+crop_bottom: 0
+
+title: Midnight Carousel
+category: Concert Band
+year: 2022
+description: Big-band piece premiered at Berklee student concert; features extended clarinet solo and driving rhythm section.
+link: https://www.youtube.com/embed/dQw4w9WgXcQ
+crop_left:
+crop_top:
+crop_right:
+crop_bottom:
+
+title: The Overton Window by Ricardo Molla
+category: Piano and Solo Trumpet Duet
+year: 2024
+description: A recording of the Overton Window, by Ricardo Molla, from Novowinds' Chamber Affairs #2 on 16th Feb 2024. Written for Solo Trumpet and Piano. Performed by Naqib Solihin Bin Azman on the trumpet and Chloe Chan on the Piano.
+link: https://youtu.be/bzHma3Gzqlc
+crop_left:
+crop_top:
+crop_right:
+crop_bottom:
