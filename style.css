@@ -251,28 +251,10 @@ h3 {
   font-size: 1rem;
 }
 
-/* Instagram direct /p/{ID}/embed/ iframe.
-   Measured via headless screenshot at 540px width:
-   - Header (white bar): 0–52px
-   - Video starts at: ~52px
-   Shift iframe up by 52px to align video to wrapper top.
-   Wrapper height = video aspect ratio = 56.426% of width. */
-.embed-wrapper.embed-instagram {
-  position: relative;
-  width: 100%;
-  padding-top: 56.426%;
-  overflow: hidden;
+/* Crop wrapper — clips edges of any embed by the px values set inline via JS */
+.embed-crop {
   border-radius: 16px;
-}
-
-.embed-wrapper.embed-instagram iframe {
-  position: absolute;
-  top: -54px;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 54px);
-  border: none;
-  border-radius: 0;
+  overflow: hidden;
 }
 
 .music-card-info {

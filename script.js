@@ -133,24 +133,46 @@ function parseCSV(text) {
     .filter(obj => obj.title && !obj.title.trim().startsWith('<'));
 }
 
-/* ── build embed HTML ── */
-function buildEmbed(raw, title) {
+/* ── build embed HTML ──
+   crop = { left, top, right, bottom } in px.
+   Positive value = clip that many px from that edge.
+   Zero / empty = no crop on that edge. */
+function buildEmbed(raw, title, crop = {}) {
   if (!raw) return '';
 
-  // Instagram blockquote in CSV — extract the reel/post ID and render a
-  // direct iframe using Instagram's public /p/{ID}/embed/ URL.
-  // We crop the header (~72px) by translating the iframe up and clipping.
+  const cl = parseFloat(crop.left)   || 0;
+  const ct = parseFloat(crop.top)    || 0;
+  const cr = parseFloat(crop.right)  || 0;
+  const cb = parseFloat(crop.bottom) || 0;
+  const hasCrop = cl || ct || cr || cb;
+
+  // Wrap the embed in a clipping container.
+  // Strategy: the inner .embed-wrapper is shifted via negative margins so the
+  // cropped edges move outside the overflow:hidden outer box.
+  function withCrop(innerHtml) {
+    if (!hasCrop) return innerHtml;
+    // Shift the inner block so unwanted edges are hidden by the outer clip.
+    // margin-top:-N moves it up N px; the outer box clips N px from the top.
+    const innerStyle = [
+      ct ? `margin-top:-${ct}px;`    : '',
+      cb ? `margin-bottom:-${cb}px;` : '',
+      cl ? `margin-left:-${cl}px;`   : '',
+      cr ? `margin-right:-${cr}px;`  : '',
+    ].filter(Boolean).join('');
+    return `<div class="embed-crop"><div style="${innerStyle}">${innerHtml}</div></div>`;
+  }
+
   if (raw.trimStart().startsWith('<blockquote')) {
     const m = raw.match(/data-instgrm-permalink="https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
     if (m) {
       const id = m[1];
-      return `<div class="embed-wrapper embed-instagram">
+      const iframe = `<div class="embed-wrapper">
         <iframe src="https://www.instagram.com/p/${id}/embed/"
           title="${title}" frameborder="0" scrolling="no"
           allow="encrypted-media; autoplay" allowfullscreen></iframe>
       </div>`;
+      return withCrop(iframe);
     }
-    // Fallback: link button
     const fb = raw.match(/data-instgrm-permalink="(https:\/\/www\.instagram\.com\/[^"?]+)/);
     const href = fb ? fb[1] : 'https://www.instagram.com/';
     return `<div class="embed-wrapper embed-link">
@@ -205,16 +227,24 @@ fetch('portfolio.csv')
       return;
     }
 
-    grid.innerHTML = entries.map(entry => `
+    grid.innerHTML = entries.map(entry => {
+      const crop = {
+        left:   entry.crop_left,
+        top:    entry.crop_top,
+        right:  entry.crop_right,
+        bottom: entry.crop_bottom,
+      };
+      return `
       <article class="music-card reveal">
-        <div class="music-card-media">${buildEmbed(entry.link, entry.title)}</div>
+        <div class="music-card-media">${buildEmbed(entry.link, entry.title, crop)}</div>
         <div class="music-card-info">
           <span class="music-category">${entry.category || ''}</span>
           <h3>${entry.title || 'Untitled'}</h3>
           <span class="music-year">${entry.year || ''}</span>
           <p>${entry.description || ''}</p>
         </div>
-      </article>`).join('');
+      </article>`;
+    }).join('');
 
     reveal();
   })
