@@ -208,31 +208,29 @@ fetch('portfolio.csv')
       if (embed.startsWith('INSTAGRAM:')) {
         const wrapper = document.createElement('div');
         wrapper.className = 'embed-wrapper embed-instagram';
-        // Strip inline style from the blockquote so the SDK copies nothing bad
+        // Strip blockquote inline style so the SDK doesn't copy max-width onto iframe
         const cleanHtml = embed.slice('INSTAGRAM:'.length)
           .replace(/(<blockquote\b[^>]*?)\sstyle="[^"]*"/i, '$1');
         wrapper.innerHTML = cleanHtml;
 
-        // The SDK sets iframe.style.position = "absolute" (inline, beats CSS).
-        // Watch for the iframe insertion and reset position to static so it
-        // flows naturally and the height attribute the SDK sets works correctly.
+        // The wrapper is position:relative. The SDK creates an iframe with
+        // position:absolute — which is correct and contained by the wrapper.
+        // The SDK sets iframe.height (attribute) via postMessage to the full
+        // page height. We mirror that onto wrapper.style.height so the wrapper
+        // expands to show the full iframe (otherwise it collapses to 0 height
+        // since its only child is position:absolute).
         const obs = new MutationObserver(() => {
           const igFrame = wrapper.querySelector('iframe');
           if (!igFrame) return;
           obs.disconnect();
-          igFrame.style.position = 'static';
-          igFrame.style.width    = '100%';
-          igFrame.style.minWidth = '0';
-          igFrame.style.left     = '';
-          igFrame.style.top      = '';
-          // Keep re-applying after each SDK postMessage update
-          new MutationObserver(() => {
-            igFrame.style.position = 'static';
-            igFrame.style.width    = '100%';
-            igFrame.style.minWidth = '0';
-            igFrame.style.left     = '';
-            igFrame.style.top      = '';
-          }).observe(igFrame, { attributes: true, attributeFilter: ['style'] });
+          // Sync wrapper height immediately and on every SDK height update
+          const syncHeight = () => {
+            const h = igFrame.getAttribute('height');
+            if (h && parseInt(h) > 0) wrapper.style.height = h + 'px';
+          };
+          syncHeight();
+          new MutationObserver(syncHeight)
+            .observe(igFrame, { attributes: true, attributeFilter: ['height'] });
         });
         obs.observe(wrapper, { childList: true, subtree: true });
 

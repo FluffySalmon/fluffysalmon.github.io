@@ -252,30 +252,35 @@ h3 {
 }
 
 /* Instagram SDK embed wrapper.
-   The SDK sets the iframe's height attribute via postMessage to the full
-   natural height of the embed page (header + video + footer).
-   Do NOT clip with padding-top — just give it full width and let it flow. */
+   position:relative so the SDK's position:absolute iframe is contained here.
+   Height is set by JS once the SDK reports it via the iframe height attribute. */
 .embed-wrapper.embed-instagram {
+  position: relative;
   width: 100%;
   background: var(--midnight);
   border-radius: 16px;
   overflow: hidden;
+  /* Minimum height while the SDK loads */
+  min-height: 200px;
 }
 
-/* Blockquote placeholder before SDK fires */
+/* Blockquote placeholder before SDK fires — hidden but keeps wrapper open */
 .embed-wrapper.embed-instagram blockquote {
-  display: block !important;
+  visibility: hidden;
+  position: absolute;
   width: 100% !important;
   max-width: none !important;
   min-width: 0 !important;
   margin: 0 !important;
 }
 
-/* SDK-injected iframe: fill width, let height be set naturally by the SDK */
+/* SDK iframe fills the wrapper exactly — height is set on wrapper by JS */
 .embed-wrapper.embed-instagram iframe {
-  display: block !important;
-  position: static !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
   width: 100% !important;
+  height: 100% !important;
   border: none !important;
   border-radius: 16px;
 }
