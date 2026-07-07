@@ -252,35 +252,32 @@ h3 {
 }
 
 /* Instagram SDK embed wrapper.
-   position:relative so the SDK's position:absolute iframe is contained here.
-   Height is set by JS once the SDK reports it via the iframe height attribute. */
+   Phase 1 (before MOUNTED): iframe is position:absolute inside this relative container.
+   Phase 2 (after MOUNTED): SDK sets iframe position:"" (static) and height=blockquote.clientHeight.
+   The wrapper sizes to the iframe naturally in phase 2. */
 .embed-wrapper.embed-instagram {
   position: relative;
   width: 100%;
-  background: var(--midnight);
   border-radius: 16px;
   overflow: hidden;
-  /* Minimum height while the SDK loads */
-  min-height: 200px;
 }
 
-/* Blockquote placeholder before SDK fires — hidden but keeps wrapper open */
+/* Blockquote placeholder — must be visible and in normal flow so that
+   blockquote.clientHeight is the correct natural height when the SDK reads it */
 .embed-wrapper.embed-instagram blockquote {
-  visibility: hidden;
-  position: absolute;
+  display: block !important;
   width: 100% !important;
   max-width: none !important;
   min-width: 0 !important;
   margin: 0 !important;
+  box-shadow: none !important;
 }
 
-/* SDK iframe fills the wrapper exactly — height is set on wrapper by JS */
+/* Phase 1: iframe is position:absolute (SDK sets this on creation).
+   Phase 2: SDK clears it to "" on MOUNTED — becomes static, flows normally.
+   Width always 100%; height comes from the height attribute the SDK sets. */
 .embed-wrapper.embed-instagram iframe {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
   width: 100% !important;
-  height: 100% !important;
   border: none !important;
   border-radius: 16px;
 }

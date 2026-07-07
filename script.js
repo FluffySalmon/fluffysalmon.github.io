@@ -208,32 +208,12 @@ fetch('portfolio.csv')
       if (embed.startsWith('INSTAGRAM:')) {
         const wrapper = document.createElement('div');
         wrapper.className = 'embed-wrapper embed-instagram';
-        // Strip blockquote inline style so the SDK doesn't copy max-width onto iframe
+        // Strip blockquote inline style so the SDK doesn't copy max-width onto iframe.
+        // Keep the blockquote visible so its clientHeight is correct when the SDK
+        // reads it on MOUNTED to determine the final iframe height.
         const cleanHtml = embed.slice('INSTAGRAM:'.length)
           .replace(/(<blockquote\b[^>]*?)\sstyle="[^"]*"/i, '$1');
         wrapper.innerHTML = cleanHtml;
-
-        // The wrapper is position:relative. The SDK creates an iframe with
-        // position:absolute — which is correct and contained by the wrapper.
-        // The SDK sets iframe.height (attribute) via postMessage to the full
-        // page height. We mirror that onto wrapper.style.height so the wrapper
-        // expands to show the full iframe (otherwise it collapses to 0 height
-        // since its only child is position:absolute).
-        const obs = new MutationObserver(() => {
-          const igFrame = wrapper.querySelector('iframe');
-          if (!igFrame) return;
-          obs.disconnect();
-          // Sync wrapper height immediately and on every SDK height update
-          const syncHeight = () => {
-            const h = igFrame.getAttribute('height');
-            if (h && parseInt(h) > 0) wrapper.style.height = h + 'px';
-          };
-          syncHeight();
-          new MutationObserver(syncHeight)
-            .observe(igFrame, { attributes: true, attributeFilter: ['height'] });
-        });
-        obs.observe(wrapper, { childList: true, subtree: true });
-
         mediaDiv.appendChild(wrapper);
         hasInstagram = true;
       } else {
