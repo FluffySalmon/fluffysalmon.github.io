@@ -177,7 +177,7 @@ function buildEmbed(raw, title, crop = {}) {
 
   const url = raw.trim();
 
-  if (url.includes('youtube.com/embed/')) {
+  if (url.includes('youtube.com/embed/') || url.includes('video.xx.fbcdn.net')) {
     return `<div class="embed-wrapper">
       <iframe src="${url}" title="${title}" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
