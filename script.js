@@ -209,11 +209,39 @@ fetch('portfolio.csv')
         const wrapper = document.createElement('div');
         wrapper.className = 'embed-wrapper embed-instagram';
         // Strip blockquote inline style so the SDK doesn't copy max-width onto iframe.
-        // Keep the blockquote visible so its clientHeight is correct when the SDK
-        // reads it on MOUNTED to determine the final iframe height.
+        // visibility:hidden (CSS) keeps the placeholder invisible while preserving
+        // its clientHeight, which the SDK reads on MOUNTED to size the iframe.
         const cleanHtml = embed.slice('INSTAGRAM:'.length)
           .replace(/(<blockquote\b[^>]*?)\sstyle="[^"]*"/i, '$1');
         wrapper.innerHTML = cleanHtml;
+
+        // Watch for the SDK removing the blockquote (MOUNTED complete).
+        // At that point the iframe is static with its height attribute set.
+        // Snap the wrapper height to the iframe's actual offsetHeight to remove
+        // any black gap caused by the inflated blockquote placeholder height.
+        const obs = new MutationObserver(mutations => {
+          for (const m of mutations) {
+            for (const node of m.removedNodes) {
+              if (node.tagName === 'BLOCKQUOTE') {
+                obs.disconnect();
+                const igFrame = wrapper.querySelector('iframe');
+                if (igFrame) {
+                  // Use offsetHeight (actual rendered px) not the attribute
+                  const snap = () => {
+                    const h = igFrame.offsetHeight;
+                    if (h > 0) wrapper.style.height = h + 'px';
+                  };
+                  snap();
+                  // Re-snap once more after a frame in case iframe is still resizing
+                  requestAnimationFrame(snap);
+                }
+                return;
+              }
+            }
+          }
+        });
+        obs.observe(wrapper, { childList: true });
+
         mediaDiv.appendChild(wrapper);
         hasInstagram = true;
       } else {
