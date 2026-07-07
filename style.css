@@ -251,32 +251,40 @@ h3 {
   font-size: 1rem;
 }
 
-/* Instagram SDK embed wrapper — natural height, full width of the media column */
+/* Instagram SDK embed wrapper.
+   The SDK measures clientWidth of this element, creates an iframe with
+   position:absolute, and resizes it via postMessage.
+   We give it position:relative + the same padding-top 16:9 box as YouTube,
+   then get out of the SDK's way entirely. */
 .embed-wrapper.embed-instagram {
   position: relative;
   width: 100%;
+  padding-top: 56.25%;   /* 16:9 — matches Instagram's own embed aspect ratio */
+  height: 0;
   background: var(--midnight);
   border-radius: 16px;
   overflow: hidden;
 }
 
-/* Pre-SDK blockquote placeholder */
+/* Blockquote placeholder — hide it once the SDK has replaced it,
+   and keep it from affecting the wrapper's size */
 .embed-wrapper.embed-instagram blockquote {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 0 !important;
+  position: absolute;
+  inset: 0;
   margin: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  border: none !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  overflow: hidden;
 }
 
-/* SDK-injected iframe — width fills column; height is set by JS from SDK signal */
+/* The SDK inserts its iframe as position:absolute with top/left/width from
+   the blockquote's clientWidth. We only ensure it fills the wrapper fully. */
 .embed-wrapper.embed-instagram iframe {
-  display: block !important;
-  position: static !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
   width: 100% !important;
+  height: 100% !important;
   border: none !important;
   border-radius: 16px;
 }

@@ -208,36 +208,16 @@ fetch('portfolio.csv')
       if (embed.startsWith('INSTAGRAM:')) {
         const wrapper = document.createElement('div');
         wrapper.className = 'embed-wrapper embed-instagram';
-        wrapper.innerHTML = embed.slice('INSTAGRAM:'.length);
-        // Strip blockquote inline style — the SDK copies it onto the iframe it
-        // creates, so a clean blockquote means a clean iframe.
-        const bq = wrapper.querySelector('blockquote');
-        if (bq) bq.removeAttribute('style');
-        // Watch for the SDK inserting its iframe, then fix only what breaks layout:
-        // clear position:absolute and width constraints so the iframe flows in the
-        // column. Let the SDK's postMessage height updates apply normally.
-        const obs = new MutationObserver(() => {
-          const igFrame = wrapper.querySelector('iframe');
-          if (!igFrame) return;
-          obs.disconnect();
-          // Reset SDK's inline styles — keep height alone so SDK can size it
-          igFrame.style.position = 'static';
-          igFrame.style.width    = '100%';
-          igFrame.style.left     = '';
-          igFrame.style.top      = '';
-          igFrame.style.minWidth = '0';
-          igFrame.removeAttribute('height');
-          // Re-observe: each time SDK updates style/height, re-apply our overrides
-          const attrObs = new MutationObserver(() => {
-            igFrame.style.position = 'static';
-            igFrame.style.width    = '100%';
-            igFrame.style.left     = '';
-            igFrame.style.top      = '';
-            igFrame.style.minWidth = '0';
-          });
-          attrObs.observe(igFrame, { attributes: true, attributeFilter: ['style', 'height'] });
-        });
-        obs.observe(wrapper, { childList: true, subtree: true });
+        // The SDK reads wrapper.clientWidth to size its iframe, then inserts the
+        // iframe as position:absolute. The wrapper must be position:relative with
+        // a real height — we set it via the 56.25% padding-top trick in CSS.
+        // Strip the blockquote's inline style so the SDK doesn't inherit
+        // max-width:540px / min-width:326px onto its iframe.
+        // Remove style only from the opening <blockquote> tag — internal element
+        // styles must stay intact for the placeholder to render correctly.
+        const cleanHtml = embed.slice('INSTAGRAM:'.length)
+          .replace(/(<blockquote\b[^>]*?)\sstyle="[^"]*"/i, '$1');
+        wrapper.innerHTML = cleanHtml;
         mediaDiv.appendChild(wrapper);
         hasInstagram = true;
       } else {
