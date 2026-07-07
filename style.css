@@ -252,9 +252,11 @@ h3 {
 }
 
 /* Instagram direct /p/{ID}/embed/ iframe.
-   The embed page has a ~72px Header above the video area.
-   Shift the iframe up 72px so the video is flush with the top of the wrapper,
-   and size the wrapper to show exactly the video (56.426% aspect ratio). */
+   Measured via headless screenshot at 540px width:
+   - Header (white bar): 0–52px
+   - Video starts at: ~52px
+   Shift iframe up by 52px to align video to wrapper top.
+   Wrapper height = video aspect ratio = 56.426% of width. */
 .embed-wrapper.embed-instagram {
   position: relative;
   width: 100%;
@@ -265,12 +267,12 @@ h3 {
 
 .embed-wrapper.embed-instagram iframe {
   position: absolute;
-  top: -72px;
+  top: -54px;
   left: 0;
   width: 100%;
-  height: calc(100% + 72px);
+  height: calc(100% + 54px);
   border: none;
-  border-radius: 16px;
+  border-radius: 0;
 }
 
 .music-card-info {
