@@ -180,7 +180,8 @@ function buildEmbed(raw, title, crop = {}) {
   if (url.includes('youtube.com/embed/') || url.includes('video.xx.fbcdn.net')) {
     return `<div class="embed-wrapper">
       <iframe src="${url}" title="${title}" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        //allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
     </div>`;
   }
