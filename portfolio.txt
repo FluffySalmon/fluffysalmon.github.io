@@ -2,7 +2,7 @@ title: Novowinds' Notes from The Little Red Dot Trailer
 category: Music Production
 year: 2025
 description: Co-produced music for the promo trailer for NOVOwinds' 2025 Beautiful Sunday Concert : Notes From The Little Red Dot.
-link: https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==/embed
+link: https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==/embed/
 crop_left: 0
 crop_top: 100
 crop_right: 0
