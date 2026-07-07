@@ -1,3 +1,5 @@
 https://soundcloud.com/fluffysalmon/bounce?si=868bf3d0f3bb44368fe7299e64fe74f7&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 
-https://www.instagram.com/reel/DMdpuGATxU7/?igsh=aWhkbDdvdjRpbWcy
+https://www.instagram.com/reel/DMdpuGATxU7/?igsh=aWhkbDdvdjRpbWcy/embed/
+
+https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==/embed/
