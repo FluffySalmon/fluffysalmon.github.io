@@ -465,3 +465,8 @@ footer {
     padding: 120px 6%;
   }
 }
+
+  .rounded-img {
+    border-radius: 22px;
+  }
+
