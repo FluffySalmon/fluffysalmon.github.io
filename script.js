@@ -208,16 +208,34 @@ fetch('portfolio.csv')
       if (embed.startsWith('INSTAGRAM:')) {
         const wrapper = document.createElement('div');
         wrapper.className = 'embed-wrapper embed-instagram';
-        // The SDK reads wrapper.clientWidth to size its iframe, then inserts the
-        // iframe as position:absolute. The wrapper must be position:relative with
-        // a real height — we set it via the 56.25% padding-top trick in CSS.
-        // Strip the blockquote's inline style so the SDK doesn't inherit
-        // max-width:540px / min-width:326px onto its iframe.
-        // Remove style only from the opening <blockquote> tag — internal element
-        // styles must stay intact for the placeholder to render correctly.
+        // Strip inline style from the blockquote so the SDK copies nothing bad
         const cleanHtml = embed.slice('INSTAGRAM:'.length)
           .replace(/(<blockquote\b[^>]*?)\sstyle="[^"]*"/i, '$1');
         wrapper.innerHTML = cleanHtml;
+
+        // The SDK sets iframe.style.position = "absolute" (inline, beats CSS).
+        // Watch for the iframe insertion and reset position to static so it
+        // flows naturally and the height attribute the SDK sets works correctly.
+        const obs = new MutationObserver(() => {
+          const igFrame = wrapper.querySelector('iframe');
+          if (!igFrame) return;
+          obs.disconnect();
+          igFrame.style.position = 'static';
+          igFrame.style.width    = '100%';
+          igFrame.style.minWidth = '0';
+          igFrame.style.left     = '';
+          igFrame.style.top      = '';
+          // Keep re-applying after each SDK postMessage update
+          new MutationObserver(() => {
+            igFrame.style.position = 'static';
+            igFrame.style.width    = '100%';
+            igFrame.style.minWidth = '0';
+            igFrame.style.left     = '';
+            igFrame.style.top      = '';
+          }).observe(igFrame, { attributes: true, attributeFilter: ['style'] });
+        });
+        obs.observe(wrapper, { childList: true, subtree: true });
+
         mediaDiv.appendChild(wrapper);
         hasInstagram = true;
       } else {
