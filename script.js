@@ -163,7 +163,9 @@ function buildEmbed(raw, title, crop = {}) {
   }
 
   if (raw.trimStart().startsWith('<blockquote')) {
-    const m = raw.match(/data-instgrm-permalink="https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
+    // The CSV parser strips internal " chars from unquoted fields, so
+    // data-instgrm-permalink may appear with or without surrounding quotes.
+    const m = raw.match(/data-instgrm-permalink=["']?https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
     if (m) {
       const id = m[1];
       const iframe = `<div class="embed-wrapper">
@@ -173,7 +175,8 @@ function buildEmbed(raw, title, crop = {}) {
       </div>`;
       return withCrop(iframe);
     }
-    const fb = raw.match(/data-instgrm-permalink="(https:\/\/www\.instagram\.com\/[^"?]+)/);
+    // Fallback: extract the URL even without quotes
+    const fb = raw.match(/data-instgrm-permalink=["']?(https:\/\/www\.instagram\.com\/[^"'\s?]+)/);
     const href = fb ? fb[1] : 'https://www.instagram.com/';
     return `<div class="embed-wrapper embed-link">
       <a href="${href}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
