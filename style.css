@@ -251,36 +251,25 @@ h3 {
   font-size: 1rem;
 }
 
-/* Instagram SDK embed wrapper.
-   Phase 1 (before MOUNTED): iframe is position:absolute inside this relative container.
-   Phase 2 (after MOUNTED): SDK sets iframe position:"" (static) and height=blockquote.clientHeight.
-   The wrapper sizes to the iframe naturally in phase 2. */
+/* Instagram direct /p/{ID}/embed/ iframe.
+   The embed page has a ~72px Header above the video area.
+   Shift the iframe up 72px so the video is flush with the top of the wrapper,
+   and size the wrapper to show exactly the video (56.426% aspect ratio). */
 .embed-wrapper.embed-instagram {
   position: relative;
   width: 100%;
-  border-radius: 16px;
+  padding-top: 56.426%;
   overflow: hidden;
-  /* No background — iframe covers the wrapper completely after MOUNTED */
+  border-radius: 16px;
 }
 
-/* Blockquote placeholder: in normal flow so clientHeight is real,
-   but invisible so no white/gray content shows before SDK fires */
-.embed-wrapper.embed-instagram blockquote {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  box-shadow: none !important;
-  visibility: hidden;
-}
-
-/* After MOUNTED the SDK sets position:"" and height=blockquote.clientHeight.
-   JS then trims the wrapper to match only the iframe's actual height. */
 .embed-wrapper.embed-instagram iframe {
-  display: block !important;
-  width: 100% !important;
-  border: none !important;
+  position: absolute;
+  top: -72px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 72px);
+  border: none;
   border-radius: 16px;
 }
 

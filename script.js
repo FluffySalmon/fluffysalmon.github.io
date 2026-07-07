@@ -133,17 +133,31 @@ function parseCSV(text) {
     .filter(obj => obj.title && !obj.title.trim().startsWith('<'));
 }
 
-/* ── build embed HTML string (non-Instagram) or flag as Instagram ── */
-// Returns a plain HTML string for iframes/links, OR the sentinel string
-// "INSTAGRAM:<clean-blockquote-html>" which the grid builder handles specially
-// by appending a real DOM node (so the SDK sees a live element, not innerHTML).
+/* ── build embed HTML ── */
 function buildEmbed(raw, title) {
   if (!raw) return '';
 
+  // Instagram blockquote in CSV — extract the reel/post ID and render a
+  // direct iframe using Instagram's public /p/{ID}/embed/ URL.
+  // We crop the header (~72px) by translating the iframe up and clipping.
   if (raw.trimStart().startsWith('<blockquote')) {
-    // Strip any <script> already baked in — we loaded embed.js in <head>
-    const clean = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').trim();
-    return 'INSTAGRAM:' + clean;
+    const m = raw.match(/data-instgrm-permalink="https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
+    if (m) {
+      const id = m[1];
+      return `<div class="embed-wrapper embed-instagram">
+        <iframe src="https://www.instagram.com/p/${id}/embed/"
+          title="${title}" frameborder="0" scrolling="no"
+          allow="encrypted-media; autoplay" allowfullscreen></iframe>
+      </div>`;
+    }
+    // Fallback: link button
+    const fb = raw.match(/data-instgrm-permalink="(https:\/\/www\.instagram\.com\/[^"?]+)/);
+    const href = fb ? fb[1] : 'https://www.instagram.com/';
+    return `<div class="embed-wrapper embed-link">
+      <a href="${href}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
+        ▶ Watch on Instagram
+      </a>
+    </div>`;
   }
 
   const url = raw.trim();
@@ -191,81 +205,16 @@ fetch('portfolio.csv')
       return;
     }
 
-    // Clear the "Loading…" placeholder
-    grid.innerHTML = '';
-
-    let hasInstagram = false;
-
-    entries.forEach(entry => {
-      const article = document.createElement('article');
-      article.className = 'music-card reveal';
-
-      const mediaDiv = document.createElement('div');
-      mediaDiv.className = 'music-card-media';
-
-      const embed = buildEmbed(entry.link, entry.title);
-
-      if (embed.startsWith('INSTAGRAM:')) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'embed-wrapper embed-instagram';
-        // Strip blockquote inline style so the SDK doesn't copy max-width onto iframe.
-        // visibility:hidden (CSS) keeps the placeholder invisible while preserving
-        // its clientHeight, which the SDK reads on MOUNTED to size the iframe.
-        const cleanHtml = embed.slice('INSTAGRAM:'.length)
-          .replace(/(<blockquote\b[^>]*?)\sstyle="[^"]*"/i, '$1');
-        wrapper.innerHTML = cleanHtml;
-
-        // Watch for the SDK removing the blockquote (MOUNTED complete).
-        // At that point the iframe is static with its height attribute set.
-        // Snap the wrapper height to the iframe's actual offsetHeight to remove
-        // any black gap caused by the inflated blockquote placeholder height.
-        const obs = new MutationObserver(mutations => {
-          for (const m of mutations) {
-            for (const node of m.removedNodes) {
-              if (node.tagName === 'BLOCKQUOTE') {
-                obs.disconnect();
-                const igFrame = wrapper.querySelector('iframe');
-                if (igFrame) {
-                  // Use offsetHeight (actual rendered px) not the attribute
-                  const snap = () => {
-                    const h = igFrame.offsetHeight;
-                    if (h > 0) wrapper.style.height = h + 'px';
-                  };
-                  snap();
-                  // Re-snap once more after a frame in case iframe is still resizing
-                  requestAnimationFrame(snap);
-                }
-                return;
-              }
-            }
-          }
-        });
-        obs.observe(wrapper, { childList: true });
-
-        mediaDiv.appendChild(wrapper);
-        hasInstagram = true;
-      } else {
-        mediaDiv.innerHTML = embed;
-      }
-
-      article.appendChild(mediaDiv);
-      article.insertAdjacentHTML('beforeend', `
+    grid.innerHTML = entries.map(entry => `
+      <article class="music-card reveal">
+        <div class="music-card-media">${buildEmbed(entry.link, entry.title)}</div>
         <div class="music-card-info">
           <span class="music-category">${entry.category || ''}</span>
           <h3>${entry.title || 'Untitled'}</h3>
           <span class="music-year">${entry.year || ''}</span>
           <p>${entry.description || ''}</p>
-        </div>`);
-
-      grid.appendChild(article);
-    });
-
-    // All blockquotes are now live in the DOM.
-    // If the SDK already finished loading, process them now.
-    // If it hasn't loaded yet, it will auto-process on load.
-    if (hasInstagram && window.instgrm) {
-      window.instgrm.Embeds.process();
-    }
+        </div>
+      </article>`).join('');
 
     reveal();
   })
