@@ -8,11 +8,11 @@ crop_top: 0
 crop_right: 0
 crop_bottom: 0
 
-title: Midnight Carousel
-category: Concert Band
-year: 2022
-description: Big-band piece premiered at Berklee student concert; features extended clarinet solo and driving rhythm section.
-link: https://www.youtube.com/embed/dQw4w9WgXcQ
+title: Night Time Drive 
+category: Vapourwave music track
+year: 2024-2025
+description: A lower energy, vapourwave inspired instrumental track that reflects what driving at a city at night feels like. 
+link: https://soundcloud.com/audie-363288170/night-time-drive?si=57975af91bd24bc993f10bf45b32cbd9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_left:
 crop_top:
 crop_right:
