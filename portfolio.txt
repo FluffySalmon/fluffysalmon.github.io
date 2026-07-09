@@ -12,7 +12,7 @@ title: Night Time Drive
 category: Vapourwave music track
 year: 2024-2025
 description: A lower energy, vapourwave inspired instrumental track that reflects what driving at a city at night feels like. 
-link: https://soundcloud.com/audie-363288170/night-time-drive?si=57975af91bd24bc993f10bf45b32cbd9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+link: https://soundcloud.com/audie-363288170/night-time-drive?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_left:
 crop_top:
 crop_right:
