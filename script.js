@@ -13,13 +13,6 @@ const reveal = () =>
 addEventListener('scroll', reveal);
 addEventListener('load', reveal);
 
-/* ── contact form placeholder ── */
-const form = document.querySelector('.contact-form');
-if (form) {
-  const btn = form.querySelector('button[type="submit"]');
-  if (btn) btn.onclick = e => { e.preventDefault(); alert('Placeholder form — message not sent.'); };
-}
-
 /* ── simple markdown → HTML (headings, bold, italic, links, list items) ── */
 function parseMarkdown(md) {
   return md
