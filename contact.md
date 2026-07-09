@@ -4,6 +4,6 @@
 
 Whether you're looking for a composer, arranager, mixer or producer for your next project, or a piano accompanist for your next concert,  feel free to reach out!
 
-- 📧 [Email Me](channchloe134@gmail.com)
+- 📧 [Email Me](mailto://channchloe134@gmail.com)
 - 📸 [Instagram](https://www.instagram.com/sfsk369)
-- 👤[Linkedin](www.linkedin.com/in/chann-chloe-8a1475331)
+- 👤[Linkedin](https://www.linkedin.com/in/chann-chloe-8a1475331)
