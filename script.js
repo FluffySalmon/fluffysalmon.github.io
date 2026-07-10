@@ -196,7 +196,7 @@ function buildEmbed(raw, title, crop = {}) {
       const iframe = `<div class="embed-wrapper">
         <iframe src="https://www.instagram.com/p/${id}/embed/"
           title="${title}" frameborder="0" scrolling="no"
-          allow="encrypted-media; autoplay" allowfullscreen></iframe>
+          allow="encrypted-media" allowfullscreen></iframe>
       </div>`;
       return withCrop(iframe);
     }
