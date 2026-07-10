@@ -21,13 +21,15 @@ if (form) {
   const btn = form.querySelector('button[type="submit"]');
   if (btn) btn.onclick = async e => {
     e.preventDefault();
-    alert("submit button clicked!!!")
     const originalBtnText = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    // Build the payload and inject the access key
-    const formData = new FormData(form);
+    // Build FormData manually from inputs/textareas/selects
+    const formData = new FormData();
+    form.querySelectorAll('input, textarea, select').forEach(field => {
+      if (field.name) formData.append(field.name, field.value);
+    });
     formData.append('access_key', access_key);
     try {
       const response = await fetch(action, {
@@ -38,12 +40,15 @@ if (form) {
 
       if (response.ok) {
         alert('Message sent successfully!');
-        form.reset();   // clears values → placeholders reappear
+        // manually clear fields (placeholders reappear automatically)
+        form.querySelectorAll('input, textarea, select').forEach(f => {
+          f.value = '';
+        });
       } else {
         alert('Something went wrong. Please try again.');
       }
     } catch (error) {
-      alert('Network error. Please try again.');
+      alert('Encounter error. Please try again.', error);
     } finally {
       btn.disabled = false;
       btn.textContent = originalBtnText;
