@@ -37,6 +37,7 @@ if (form) {
         body: formData,
         headers: { 'Accept': 'application/json' }
       });
+      alert('Response body:', result);   // 👈 shows { success: true, message: ... }
 
       if (response.ok) {
         alert('Message sent successfully!');
