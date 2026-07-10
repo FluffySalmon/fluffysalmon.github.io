@@ -31,19 +31,12 @@ if (form) {
       if (field.name) formData.append(field.name, field.value);
     });
     formData.append('access_key', access_key);
-    console.log('--- Payload being sent ---');
-    for (let [key, value] of formData.entries()) {
-        console.log(key, ':', value);
-    }
     try {
       const response = await fetch(action, {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
       });
-      const result = await response.json();
-      console.log('Response body:', result);   // 👈 shows { success: true, message: ... }
-
       if (response.ok) {
         alert('Message sent successfully!');
         // manually clear fields (placeholders reappear automatically)
@@ -51,10 +44,10 @@ if (form) {
           f.value = '';
         });
       } else {
-        console.log('Something went wrong. Please try again.');
+        alert('Something went wrong. Please try again.');
       }
     } catch (error) {
-      console.log('Encounter error. Please try again.', error);
+      alert('Encounter error. Please try again: '+ error);
     } finally {
       btn.disabled = false;
       btn.textContent = originalBtnText;
