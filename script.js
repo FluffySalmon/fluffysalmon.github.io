@@ -13,6 +13,45 @@ const reveal = () =>
 addEventListener('scroll', reveal);
 addEventListener('load', reveal);
 
+/* ── contact form placeholder ── */
+const form = document.querySelector('.contact-form');
+if (form) {
+  const action="https://api.web3forms.com/submit";
+  const access_key = "e0d19a99-adfc-4c09-abed-78d367e57bcf";
+  const btn = form.querySelector('button[type="submit"]');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = form.querySelector('button[type="submit"]');
+    const originalBtnText = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+    // Build the payload and inject the access key
+    const formData = new FormData(form);
+    formData.append('access_key', access_key);
+
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        alert('Message sent successfully!');
+        form.reset();   // clears values → placeholders reappear
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again.');
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = originalBtnText; }
+    }
+  });
+}
+
 /* ── simple markdown → HTML (headings, bold, italic, links, list items) ── */
 function parseMarkdown(md) {
   return md
