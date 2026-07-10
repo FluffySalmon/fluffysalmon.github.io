@@ -31,6 +31,10 @@ if (form) {
       if (field.name) formData.append(field.name, field.value);
     });
     formData.append('access_key', access_key);
+    console.log('--- Payload being sent ---');
+    for (let [key, value] of formData.entries()) {
+        console.log(key, ':', value);
+    }
     try {
       const response = await fetch(action, {
         method: 'POST',
