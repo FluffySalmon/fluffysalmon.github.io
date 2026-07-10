@@ -37,7 +37,7 @@ if (form) {
         body: formData,
         headers: { 'Accept': 'application/json' }
       });
-      alert('Response body:', result);   // 👈 shows { success: true, message: ... }
+      console.log('Response body:', result);   // 👈 shows { success: true, message: ... }
 
       if (response.ok) {
         alert('Message sent successfully!');
@@ -46,10 +46,10 @@ if (form) {
           f.value = '';
         });
       } else {
-        alert('Something went wrong. Please try again.');
+        console.log('Something went wrong. Please try again.');
       }
     } catch (error) {
-      alert('Encounter error. Please try again.', error);
+      console.log('Encounter error. Please try again.', error);
     } finally {
       btn.disabled = false;
       btn.textContent = originalBtnText;
