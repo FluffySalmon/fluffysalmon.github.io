@@ -41,7 +41,8 @@ if (form) {
         body: formData,
         headers: { 'Accept': 'application/json' }
       });
-      console.log('Response body:', response);   // 👈 shows { success: true, message: ... }
+      const result = await response.json();
+      console.log('Response body:', result);   // 👈 shows { success: true, message: ... }
 
       if (response.ok) {
         alert('Message sent successfully!');
