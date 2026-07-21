@@ -9,9 +9,9 @@ crop_right: 0
 crop_bottom: 0
 
 title: Night Time Drive 
-category: Vapourwave music track
+category: Vapourwave Instrumental music track
 year: 2024-2025
-description: A lower energy, vapourwave inspired instrumental track that reflects what driving at a city at night feels like. 
+description: A lower energy, vapourwave inspired instrumental track that reflects what driving at a city at night feels like. Orginally made for an ambient/idle state in a level in a student game's project.
 link: https://on.soundcloud.com/bXGn2rw7oj5HO0H6NM
 crop_left:
 crop_top:
@@ -25,5 +25,31 @@ description: A recording of the Overton Window, by Ricardo Molla, from Novowinds
 link: https://youtu.be/bzHma3Gzqlc
 crop_left:
 crop_top:
+crop_right:
+crop_bottom:
+
+title: Fighting Heaven 
+category: Electronic Orchestral Rock Instrumental Music Track
+year: 2024
+description: A high energy music track that is used in a student's game project's final boss. Inspired by many final boss tracks in various games, with 80s rock and church assiocated instruments as a main source of inspiration. 
+link: https://soundcloud.com/audie-363288170/fighting-heaven?si=54c927209fec4396acef69a5f7273862&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+crop_left:
+crop_top:
+crop_right:
+crop_bottom:
+
+title: On Cloud Nine 
+category: Electronic pop Insturmental Music Track 
+year: 2023
+description: A high energy music track that is highly inspired by Toby Fox's Deltarune track A Cyber's World. Explores various music motif interraction similar to Toby Fox's own composition style and also various electronic SFX to give the Electronic genre feel. Orginally made for a ambient music project for open spaces. 
+link: https://soundcloud.com/audie-363288170/on-cloud-nine?si=e9c20ab00aeb49f9b74a5d778a36a1eb&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+crop_right:
+crop_bottom:
+
+title: Let's Bounce! 
+category: Electroswing Instrumental Music Track
+year: 2021
+description: A high energy music track orginally made for a final project for school. Highly inspired by the Electroswing genre and Big band music. Features live instruments such as a solo saxophone and jazz drums alongside MIDI. 
+link: https://soundcloud.com/audie-363288170/lets-bounce?si=ffd308ca2eb44804857a1c5d3fb210a4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_right:
 crop_bottom:
