@@ -53,3 +53,11 @@ description: A high energy music track orginally made for a final project for sc
 link: https://soundcloud.com/audie-363288170/lets-bounce?si=ffd308ca2eb44804857a1c5d3fb210a4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_right:
 crop_bottom:
+
+title: More short lo-fi beats to eat dinner with 
+category: Lo-fi Accoustic Insturmental Music Track.
+year: 2024
+description: A low energy music track that was orignally made for a game's menu theme. Highly inpsired by the Lo-fi genre , mixed with standard Jazz instruments and accompiment.  
+link: https://soundcloud.com/audie-363288170/more-short-lo-fi-beats-to-eat?  si=7ea086ec1e6f4eca99bc4cef1ea19be8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+crop_right:
+crop_bottom:
