@@ -61,3 +61,13 @@ description: A low energy music track that was orignally made for a game's menu 
 link: https://soundcloud.com/audie-363288170/more-short-lo-fi-beats-to-eat?  si=7ea086ec1e6f4eca99bc4cef1ea19be8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_right:
 crop_bottom:
+
+title: Welcome to the Kingdom 
+category: Orcehstral Music with World music Elements. 
+year: Produced 2024, released 2026.
+description: A Orchestral World track incorporating various world music techniques, such as African Drum rhythms and percussion, with Pentatonic scales commonly found in Asian music. It is highly inspired by a movie where the characters entered a jungle and found a hidden kingdom and temple deep within the woods, and thus , this track is supposed to invoke a feeling of mystery , grandness, and scale. 
+link:https://soundcloud.com/audie-363288170/welcome-to-the-kingdom?si=e653b3ac78bf4acb9a4c68e7247c1945&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+crop_right:
+crop_bottom:
+
+
