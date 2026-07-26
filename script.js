@@ -221,6 +221,37 @@ function buildEmbed(raw, title, crop = {}) {
     </div>`;
   }
 
+ if (url.includes('soundcloud.com')) {
+    // Default options (can be overridden)
+    const settings = {
+      width: '100%',
+      height: '166',
+      color: 'ff5500',
+      autoPlay: false,
+      hideRelated: false,
+      showComments: true,
+      showUser: true,
+      showReposts: false,
+      showTeaser: true,
+      visual: false
+    };
+    const encodedUrl = encodeURIComponent(url);
+    const playerUrl = `https://w.soundcloud.com/player/?url=${encodedUrl}` +
+    `&color=%23${settings.color}` +
+    `&auto_play=${settings.autoPlay}` +
+    `&hide_related=${settings.hideRelated}` +
+    `&show_comments=${settings.showComments}` +
+    `&show_user=${settings.showUser}` +
+    `&show_reposts=${settings.showReposts}` +
+    `&show_teaser=${settings.showTeaser}` +
+    `&visual=${settings.visual}`;
+    return `<div class="embed-wrapper">
+      <iframe src="${playerUrl}" title="${title}" frameborder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>`;
+  }
+
   const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/);
   if (ytMatch) {
     return `<div class="embed-wrapper">
