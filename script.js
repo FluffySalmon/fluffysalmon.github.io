@@ -4,24 +4,19 @@
 // menu.onclick = () => links.classList.toggle('active');
 // document.querySelectorAll('.nav-links a').forEach(a => a.onclick = () => links.classList.remove('active'));
 
-// 1. Grab all the links inside your nav
 const navLinks = document.querySelectorAll('.nav-link');
-      
-// 2. Grab all the content sections
 const sections = document.querySelectorAll('.page-section');
-
+const btns = document.querySelectorAll('a.btn.primary, a.btn.secondary');
 navLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     // PREVENT DEFAULT: This stops the browser from trying to scroll down the page!
     e.preventDefault();
-
     // Get the target ID from the href (e.g., "#about" becomes "about")
     const targetId = this.getAttribute('href').substring(1);
     // Hide all sections
     sections.forEach(section => {
       section.classList.remove('active');
     });
-
     // Remove 'active' styling from all links
     navLinks.forEach(nav => {
       nav.classList.remove('active');
@@ -31,6 +26,16 @@ navLinks.forEach(link => {
     document.getElementById(targetId).classList.add('active');
     // Add 'active' styling to the clicked link
     this.classList.add('active');
+  });
+});
+btns.forEach(btn=> {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(targetId).classList.add('active');
   });
 });
 
