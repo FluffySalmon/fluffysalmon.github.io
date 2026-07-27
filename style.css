@@ -499,13 +499,11 @@ footer {
   .page-section.active {
     display: block; 
   }
-/*
         .navbar { display: flex; align-items: center; background: #333; color: white; padding: 10px 20px; }
         .logo { font-size: 1.2rem; font-weight: bold; margin-right: auto; }
         .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
         .nav-links a { color: white; text-decoration: none; padding: 5px 10px; }
         .menu-toggle { display: none; } /* Hidden on desktop */
-*/
 
   .hero {
     padding: 120px 6%;
