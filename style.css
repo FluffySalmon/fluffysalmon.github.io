@@ -478,3 +478,7 @@ form {
   flex-direction: column;
 }
 
+.instagram-container {
+   width: 100%;
+   max-width: 400px;
+}

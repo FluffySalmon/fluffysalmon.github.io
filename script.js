@@ -261,6 +261,12 @@ function buildEmbed(raw, title, crop = {}) {
     </div>`;
   }
 
+  if (url.includes('instagram.com') && url.includes('blockquote')) {
+    return `<div class="instagram-container">
+      "${url}" 
+    </div>`;
+  }
+
   if (url.includes('instagram.com')) {
     return `<div class="embed-wrapper embed-link">
       <a href="${url}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
