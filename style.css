@@ -484,6 +484,8 @@ footer {
   .contact,
   .music-card {
     grid-template-columns: 1fr;
+    gap: 50px;
+    align-items: center;
   }
  
   .section {
