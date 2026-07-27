@@ -186,19 +186,20 @@ function buildEmbed(raw, title, crop = {}) {
     ].filter(Boolean).join('');
     return `<div class="embed-crop"><div style="${innerStyle}">${innerHtml}</div></div>`;
   }
-  /**
+  /** 
   if (raw.trimStart().startsWith('<blockquote')) {
     // The CSV parser strips internal " chars from unquoted fields, so
     // data-instgrm-permalink may appear with or without surrounding quotes.
     const m = raw.match(/data-instgrm-permalink=["']?https:\/\/www\.instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
     if (m) {
       const id = m[1];
-      const iframe = `<div class="embed-wrapper">
-        <iframe src="https://www.instagram.com/p/${id}/embed/"
+      const iframe = `<div class="instagram-container">
+        <iframe src="https://www.instagram.com/reel/${id}/embed/"
           title="${title}" frameborder="0" scrolling="no"
           allow="encrypted-media" allowfullscreen></iframe>
       </div>`;
       return withCrop(iframe);
+      //return iframe;
     }
     // Fallback: extract the URL even without quotes
     const fb = raw.match(/data-instgrm-permalink=["']?(https:\/\/www\.instagram\.com\/[^"'\s?]+)/);
@@ -265,7 +266,9 @@ function buildEmbed(raw, title, crop = {}) {
   if (url.includes('instagram.com') && url.includes('blockquote')) {
     return `<div class="instagram-container"> ${url} </div>`;
   }
-
+  if (url.startsWith('<div')) {
+    return `${url}`;
+  }
   if (url.includes('instagram.com')) {
     return `<div class="embed-wrapper embed-link">
       <a href="${url}" target="_blank" rel="noopener" class="btn primary embed-external-btn">
