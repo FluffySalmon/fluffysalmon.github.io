@@ -146,23 +146,6 @@ h3 {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(255, 79, 216, 0.35);
 }
-
-  .page-section {
-    display: none; 
-    padding: 110px 8%;
-    /* padding: 40px 20px; */
-  }
-
-  .page-section.active {
-    display: block; 
-  }
-
-  /*
-        .navbar { display: flex; align-items: center; background: #333; color: white; padding: 10px 20px; }
-        .logo { font-size: 1.2rem; font-weight: bold; margin-right: auto; }
-        .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
-        .nav-links a { color: white; text-decoration: none; padding: 5px 10px; }
-        .menu-toggle { display: none; } */     /* Hidden on desktop */
 /**
 .section {
   padding: 110px 8%;
@@ -509,6 +492,7 @@ footer {
   .hero {
     padding: 120px 6%;
   }
+}
 
   .rounded-img {
     border-radius: 22px;
@@ -540,6 +524,4 @@ video {
   width: 100%;
   border-radius: 16px;
   background-color: #000;
-}
-
 }
