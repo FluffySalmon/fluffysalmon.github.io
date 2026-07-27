@@ -17,7 +17,6 @@ navLinks.forEach(link => {
 
     // Get the target ID from the href (e.g., "#about" becomes "about")
     const targetId = this.getAttribute('href').substring(1);
-    console.log("targetId: ",targetId);
     // Hide all sections
     sections.forEach(section => {
       section.classList.remove('active');
