@@ -18,4 +18,4 @@ https://on.soundcloud.com/bXGn2rw7oj5HO0H6NM
 https://www.instagram.com/reel/DMdpuGATxU7/?igsh=aWhkbDdvdjRpbWcy/embed/
 
 
-<div class="video-container"><video controls playsinline loop muted><source src="reel.mp4" type="video/mp4">Your browser does not support the video tag.</video><p><a href="https://www.instagram.com/reel/DMdpuGATxU7/?igsh=aWhkbDdvdjRpbWcy/embed/" target="_blank" rel="noopener" class="btn primary embed-external-btn">▶ Watch on Instagram</a> </div>
+<div class="video-container"><video style="width: 100%; height: auto;"  controls><source src="movies/reel.mp4" type="video/mp4">Your browser does not support the video tag.</video><p><a href="https://www.instagram.com/reel/DMdpuGATxU7/?igsh=aWhkbDdvdjRpbWcy/embed/" target="_blank" rel="noopener" class="btn primary embed-external-btn">▶ Watch on Instagram</a> </div>
