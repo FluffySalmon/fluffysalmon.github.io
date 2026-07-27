@@ -1,22 +1,110 @@
-title: Novowinds' Notes from The Little Red Dot Trailer
-category: Music Production
-year: 2025
-description: Co-produced music for the promo trailer for NOVOwinds' 2025 Beautiful Sunday Concert : Notes From The Little Red Dot.
-link: <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Novo Winds (@novowinds)</a></p></div></blockquote> <script async src="https://www.instagram.com/embed.js"></script>
-crop_left: 0
-crop_top: 0
-crop_right: 0
-crop_bottom: 0
-
 title: Night Time Drive 
 category: Vapourwave Instrumental music track
 year: 2024-2025
 description: A lower energy, vapourwave inspired instrumental track that reflects what driving at a city at night feels like. Orginally made for an ambient/idle state in a level in a student game's project.
 link: https://soundcloud.com/audie-363288170/night-time-drive?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_left:
-crop_top:
-crop_right:
-crop_bottom:
+
+title: Fighting Heaven 
+category: Electronic Orchestral Rock Instrumental Music Track
+year: 2024
+description: A high energy music track that is used in a student's game project's final boss. Inspired by many final boss tracks in various games, with 80s rock and church assiocated instruments as a main source of inspiration. 
+link: https://soundcloud.com/audie-363288170/fighting-heaven?si=54c927209fec4396acef69a5f7273862&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: On Cloud Nine 
+category: Electronic pop Insturmental Music Track 
+year: 2023
+description: A high energy music track that is highly inspired by Toby Fox's Deltarune track A Cyber's World. Explores various music motif interraction similar to Toby Fox's own composition style and also various electronic SFX to give the Electronic genre feel. Orginally made for a ambient music project for open spaces. 
+link: https://soundcloud.com/audie-363288170/on-cloud-nine?si=e9c20ab00aeb49f9b74a5d778a36a1eb&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Let's Bounce! 
+category: Electroswing Instrumental Music Track
+year: 2021
+description: A high energy music track orginally made for a final project for school. Highly inspired by the Electroswing genre and Big band music. Features live instruments such as a solo saxophone and jazz drums alongside MIDI. 
+link: https://soundcloud.com/audie-363288170/lets-bounce?si=ffd308ca2eb44804857a1c5d3fb210a4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: More short lo-fi beats to eat dinner with 
+category: Lo-fi Accoustic Insturmental Music Track.
+year: 2024
+description: A low energy music track that was orignally made for a game's menu theme. Highly inpsired by the Lo-fi genre , mixed with standard Jazz instruments and accompiment.  
+link: https://soundcloud.com/audie-363288170/more-short-lo-fi-beats-to-eat?  si=7ea086ec1e6f4eca99bc4cef1ea19be8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Welcome to the Kingdom 
+category: Orcehstral Music with World music Elements. 
+year: Produced 2024, released 2026.
+description: A Orchestral World track incorporating various world music techniques, such as African Drum rhythms and percussion, with Pentatonic scales commonly found in Asian music. It is highly inspired by a movie where the characters entered a jungle and found a hidden kingdom and temple deep within the woods, and thus , this track is supposed to invoke a feeling of mystery , grandness, and scale. 
+link:https://soundcloud.com/audie-363288170/welcome-to-the-kingdom?si=e653b3ac78bf4acb9a4c68e7247c1945&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: 想着你
+category: Insturmental Mandopop inspired Track.
+year: Produced 2022, released 2026.
+description: A track heavily inspired by Mandopop and slow love ballads. The use of the saxophone aid in the sensual feeling and is a common accompaniment instrument found in love ballads, now used as the main melody instrument.The song overall is meant to feel like thinking about a loved one. 
+link:https://soundcloud.com/audie-363288170/yvnv6pohpsr4?si=aa90ceb3424a49ec9d933797455aa3d6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Guardian Angel ( Remade ) 
+category: Orcehstral Instrumental track.
+year: 2026.
+description: A new version of a previously released track. It was heavily inspired by Toby's Fox's soundtrack for Undertale, " His theme" . It heavily follows the energy rising, and even the interchanging of motifs that Toby fox uses.  It uses a grander arrangement that is present in the original track for more emotional hits and a grander feeling, similar to an angel descending. 
+link:https://soundcloud.com/audie-363288170/guardian-angel-renewed?si=6c882dbabaad40159df581168a6b304d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Still Water Ripples 
+category: Ambient Insturmental Track.
+year: Produced 2021, Released 2026.
+description:A track that was highly inspired by the zen feeling that somebody gets in a hot bath. It is a low energy track that is supposed to be highly meditative , with the woodblock outlining the big beats. The piano and the glockispiel give it a calm feeling of meditating.
+link:https://soundcloud.com/audie-363288170/still-water-ripples?si=f6436dcd1f624eeaa9d90510734c9e83&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Lets Have a Dance Battle. 
+category: Electronic Video Game Battle Theme. 
+year: Produced 2022, released 2026
+description:A track that was originally made for a Yomusic Contest by Hoyolab, but was disqualified as it was an orginal track. It was meant to be a battle theme for the game's Honkai Star Rail  Penacony area. It was highly inspired by Penacony's mix of the 1920s vibe with cyber tech, so this song was in the electroswing genre to accompany the area well. 
+link:https://soundcloud.com/audie-363288170/lets-have-a-dance-battle?si=9f53c61e7ae341faa12ab97221198f43&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: A Child's Summmer
+category: Accoustic Child-like Video Game Ambeient Track.
+year: Produced 2022, released 2026
+description:A track made for a beach area of a game. The use of Congo drums and aux instruments help feel the summer vibes, and the child like back and forth of the flute and xylophone is supposed to sound like a child playing back and forth. The overall simple yet upbeat track reflects the character exploring a beach. The cutesy feeling is reflecting of the art style of the game, which is quite cute.
+link:https://soundcloud.com/audie-363288170/a-childs-summer?si=de12f0b55bef463ab0b709bed46813a8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: A Good Start To Your Day
+category: Rock music Inspired Tv Title Sequence Soundtrack
+year: Produced 2022, released 2026
+description:A high energy track that is made for an opening title sequence for a Tv show as an assignment. Due to copyright, only the music is released. The show is similar to early 2000s family based shows, and involves the family getting ready for the day.  The use of uplifting drum patterns , high energy and rock guitar helps in conveying the feeling of a good start to a day. The track ends the same way it starts to help its loopablity. 
+link:https://soundcloud.com/audie-363288170/a-good-start-to-your-day?si=3dc2c2c7773b40b3a6f58bd6c562dec9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Suspense
+category: Trandtional Horror Orcehstral Movie Soundtrack.
+year: Produced 2023, released 2026
+description: A low energy ambient sound track made for an opening title screen for a horror movie scoring assignment. Highly inspired by traditional horror tracks in horror movies, it uses various atonal and non matching melodies and harmony to invoke a sense of dread and unease.  
+link:https://soundcloud.com/audie-363288170/suspense?si=625d6abad6f8465c820eaa2ca699ce95&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: An Adventure In The Sky
+category: Orchestral music piece.
+year: Produced 2023, released 2026
+description:A high energy music piece made for a final orchestral project. It is highly inspired by various tracks played in games or movies where the character is flying , for example, Pokemon Flying tracks.  It uses an uplifting chord progression, with the various orchestra  instruments joining in later to give a sense of grandness. The slow part  is supposed to invoke the feeling of slight relaxation when flying in a game, and the adventure continues with renewed energy and excitement at the finale, as it ends on a high energy note.  There are fully written scores for this piece, and if anybody is interested, you can contact me for them!
+link: https://soundcloud.com/audie-363288170/an-adventure-in-the-sky?si=72f0b92a54324975a4bf3e101a5c3bff&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: A Hero's Fall
+category: Brass Ensmeble Inspired Movie Soundtrack.
+year: Produced 2023, released 2026
+description: A track made for a movie scoring assignement , however due to copyright issues, only the audio is availble. The scene depicts the character remembering a soldier falling in war and then crying.  The use of Brass instruments as an ensemble heavily invokes the feeling of loss in war , since they are associated with war. The strings come in later to match the character making down in tears in the scene as the memory hits, to invoke the emotions overflowing out. 
+link: https://soundcloud.com/audie-363288170/a-heros-fall?si=5a6ffbc25f834b6891248e5805bc9177&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Searching On A Stormy Sea
+category: Orcehstral Based Movie Soundtrack
+year: Produced 2023, released 2026
+description: A track made for a scoring assignment for a scene in the Atlantis movie.  Due to copyright, only the audio is released. The use of moving strings invoke the feeling of movement as the ship sailed into a storm. The later instruments come in with a dark chord tone as the tensions raised higher on the ship as they are unable to find the monster.  The later part has exchanging triplets to mimic sea waves and swaying in the rocky sea.  The rising and dropping scale follows a huge monster jumping and diving into the sea. It ending on a triumphant tone as the crew now sees the monster and looks for it again.
+link: https://soundcloud.com/audie-363288170/a-heros-fall?si=5a6ffbc25f834b6891248e5805bc9177&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: Sunrise
+category: Orcehstral Based Movie Soundtrack
+year: Produced 2023, released 2026
+description: A music track made for an ending scene for a movie for a scoring assignment. Due to copyright, only the audio is released.  The use of  both extreme ends of an orchestra reflects the size difference of the protagonist and the newly tamed monsters.  As the pair march out of the forest, the sun rises and brightens the scene. The musics reflects that , with the movement in key, and later on with the choir and high strings, as the sun rays making the flowers bloom. The music laters shrinks in size in arrangement as the protagonists rests in a quiet groove. 
+link:https://soundcloud.com/audie-363288170/sunrise?si=51c3622a3ba94f5bb24125f23ea9577a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+
+title: An Emergency
+category: Orcehstral Based Movie Soundtrack
+year: Produced 2023, released 2026
+description: A track made for a scoring exercise for a movie scene. Due to copyright issues, only the audio is released. The use of moving strings parts and the additional of more moving strings reflect the character's panic and the sense of urgency in the scene.  The horns and the strings come in as the action scene is at its peak and ready to boil over.
+link:https://soundcloud.com/audie-363288170/an-emergency?si=822204195b56421c8544600854ad1764&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 
 title: The Overton Window by Ricardo Molla
 category: Piano and Solo Trumpet Duet
@@ -28,140 +116,12 @@ crop_top:
 crop_right:
 crop_bottom:
 
-title: Fighting Heaven 
-category: Electronic Orchestral Rock Instrumental Music Track
-year: 2024
-description: A high energy music track that is used in a student's game project's final boss. Inspired by many final boss tracks in various games, with 80s rock and church assiocated instruments as a main source of inspiration. 
-link: https://soundcloud.com/audie-363288170/fighting-heaven?si=54c927209fec4396acef69a5f7273862&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_left:
-crop_top:
-crop_right:
-crop_bottom:
-
-title: On Cloud Nine 
-category: Electronic pop Insturmental Music Track 
-year: 2023
-description: A high energy music track that is highly inspired by Toby Fox's Deltarune track A Cyber's World. Explores various music motif interraction similar to Toby Fox's own composition style and also various electronic SFX to give the Electronic genre feel. Orginally made for a ambient music project for open spaces. 
-link: https://soundcloud.com/audie-363288170/on-cloud-nine?si=e9c20ab00aeb49f9b74a5d778a36a1eb&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Let's Bounce! 
-category: Electroswing Instrumental Music Track
-year: 2021
-description: A high energy music track orginally made for a final project for school. Highly inspired by the Electroswing genre and Big band music. Features live instruments such as a solo saxophone and jazz drums alongside MIDI. 
-link: https://soundcloud.com/audie-363288170/lets-bounce?si=ffd308ca2eb44804857a1c5d3fb210a4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: More short lo-fi beats to eat dinner with 
-category: Lo-fi Accoustic Insturmental Music Track.
-year: 2024
-description: A low energy music track that was orignally made for a game's menu theme. Highly inpsired by the Lo-fi genre , mixed with standard Jazz instruments and accompiment.  
-link: https://soundcloud.com/audie-363288170/more-short-lo-fi-beats-to-eat?  si=7ea086ec1e6f4eca99bc4cef1ea19be8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Welcome to the Kingdom 
-category: Orcehstral Music with World music Elements. 
-year: Produced 2024, released 2026.
-description: A Orchestral World track incorporating various world music techniques, such as African Drum rhythms and percussion, with Pentatonic scales commonly found in Asian music. It is highly inspired by a movie where the characters entered a jungle and found a hidden kingdom and temple deep within the woods, and thus , this track is supposed to invoke a feeling of mystery , grandness, and scale. 
-link:https://soundcloud.com/audie-363288170/welcome-to-the-kingdom?si=e653b3ac78bf4acb9a4c68e7247c1945&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: 想着你
-category: Insturmental Mandopop inspired Track.
-year: Produced 2022, released 2026.
-description: A track heavily inspired by Mandopop and slow love ballads. The use of the saxophone aid in the sensual feeling and is a common accompaniment instrument found in love ballads, now used as the main melody instrument.The song overall is meant to feel like thinking about a loved one. 
-link:https://soundcloud.com/audie-363288170/yvnv6pohpsr4?si=aa90ceb3424a49ec9d933797455aa3d6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Guardian Angel ( Remade ) 
-category: Orcehstral Instrumental track.
-year: 2026.
-description: A new version of a previously released track. It was heavily inspired by Toby's Fox's soundtrack for Undertale, " His theme" . It heavily follows the energy rising, and even the interchanging of motifs that Toby fox uses.  It uses a grander arrangement that is present in the original track for more emotional hits and a grander feeling, similar to an angel descending. 
-link:https://soundcloud.com/audie-363288170/guardian-angel-renewed?si=6c882dbabaad40159df581168a6b304d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Still Water Ripples 
-category: Ambient Insturmental Track.
-year: Produced 2021, Released 2026.
-description:A track that was highly inspired by the zen feeling that somebody gets in a hot bath. It is a low energy track that is supposed to be highly meditative , with the woodblock outlining the big beats. The piano and the glockispiel give it a calm feeling of meditating.
-link:https://soundcloud.com/audie-363288170/still-water-ripples?si=f6436dcd1f624eeaa9d90510734c9e83&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Lets Have a Dance Battle. 
-category: Electronic Video Game Battle Theme. 
-year: Produced 2022, released 2026
-description:A track that was originally made for a Yomusic Contest by Hoyolab, but was disqualified as it was an orginal track. It was meant to be a battle theme for the game's Honkai Star Rail  Penacony area. It was highly inspired by Penacony's mix of the 1920s vibe with cyber tech, so this song was in the electroswing genre to accompany the area well. 
-link:https://soundcloud.com/audie-363288170/lets-have-a-dance-battle?si=9f53c61e7ae341faa12ab97221198f43&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: A Child's Summmer
-category: Accoustic Child-like Video Game Ambeient Track.
-year: Produced 2022, released 2026
-description:A track made for a beach area of a game. The use of Congo drums and aux instruments help feel the summer vibes, and the child like back and forth of the flute and xylophone is supposed to sound like a child playing back and forth. The overall simple yet upbeat track reflects the character exploring a beach. The cutesy feeling is reflecting of the art style of the game, which is quite cute.
-link:https://soundcloud.com/audie-363288170/a-childs-summer?si=de12f0b55bef463ab0b709bed46813a8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: A Good Start To Your Day
-category: Rock music Inspired Tv Title Sequence Soundtrack
-year: Produced 2022, released 2026
-description:A high energy track that is made for an opening title sequence for a Tv show as an assignment. Due to copyright, only the music is released. The show is similar to early 2000s family based shows, and involves the family getting ready for the day.  The use of uplifting drum patterns , high energy and rock guitar helps in conveying the feeling of a good start to a day. The track ends the same way it starts to help its loopablity. 
-link:https://soundcloud.com/audie-363288170/a-good-start-to-your-day?si=3dc2c2c7773b40b3a6f58bd6c562dec9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Suspense
-category: Trandtional Horror Orcehstral Movie Soundtrack.
-year: Produced 2023, released 2026
-description: A low energy ambient sound track made for an opening title screen for a horror movie scoring assignment. Highly inspired by traditional horror tracks in horror movies, it uses various atonal and non matching melodies and harmony to invoke a sense of dread and unease.  
-link:https://soundcloud.com/audie-363288170/suspense?si=625d6abad6f8465c820eaa2ca699ce95&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: An Adventure In The Sky
-category: Orchestral music piece.
-year: Produced 2023, released 2026
-description:A high energy music piece made for a final orchestral project. It is highly inspired by various tracks played in games or movies where the character is flying , for example, Pokemon Flying tracks.  It uses an uplifting chord progression, with the various orchestra  instruments joining in later to give a sense of grandness. The slow part  is supposed to invoke the feeling of slight relaxation when flying in a game, and the adventure continues with renewed energy and excitement at the finale, as it ends on a high energy note.  There are fully written scores for this piece, and if anybody is interested, you can contact me for them!
-link: https://soundcloud.com/audie-363288170/an-adventure-in-the-sky?si=72f0b92a54324975a4bf3e101a5c3bff&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: A Hero's Fall
-category: Brass Ensmeble Inspired Movie Soundtrack.
-year: Produced 2023, released 2026
-description: A track made for a movie scoring assignement , however due to copyright issues, only the audio is availble. The scene depicts the character remembering a soldier falling in war and then crying.  The use of Brass instruments as an ensemble heavily invokes the feeling of loss in war , since they are associated with war. The strings come in later to match the character making down in tears in the scene as the memory hits, to invoke the emotions overflowing out. 
-link: https://soundcloud.com/audie-363288170/a-heros-fall?si=5a6ffbc25f834b6891248e5805bc9177&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Searching On A Stormy Sea
-category: Orcehstral Based Movie Soundtrack
-year: Produced 2023, released 2026
-description: A track made for a scoring assignment for a scene in the Atlantis movie.  Due to copyright, only the audio is released. The use of moving strings invoke the feeling of movement as the ship sailed into a storm. The later instruments come in with a dark chord tone as the tensions raised higher on the ship as they are unable to find the monster.  The later part has exchanging triplets to mimic sea waves and swaying in the rocky sea.  The rising and dropping scale follows a huge monster jumping and diving into the sea. It ending on a triumphant tone as the crew now sees the monster and looks for it again.
-link: https://soundcloud.com/audie-363288170/a-heros-fall?si=5a6ffbc25f834b6891248e5805bc9177&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: Sunrise
-category: Orcehstral Based Movie Soundtrack
-year: Produced 2023, released 2026
-description: A music track made for an ending scene for a movie for a scoring assignment. Due to copyright, only the audio is released.  The use of  both extreme ends of an orchestra reflects the size difference of the protagonist and the newly tamed monsters.  As the pair march out of the forest, the sun rises and brightens the scene. The musics reflects that , with the movement in key, and later on with the choir and high strings, as the sun rays making the flowers bloom. The music laters shrinks in size in arrangement as the protagonists rests in a quiet groove. 
-link:https://soundcloud.com/audie-363288170/sunrise?si=51c3622a3ba94f5bb24125f23ea9577a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: An Emergency
-category: Orcehstral Based Movie Soundtrack
-year: Produced 2023, released 2026
-description: A track made for a scoring exercise for a movie scene. Due to copyright issues, only the audio is released. The use of moving strings parts and the additional of more moving strings reflect the character's panic and the sense of urgency in the scene.  The horns and the strings come in as the action scene is at its peak and ready to boil over.
-link:https://soundcloud.com/audie-363288170/an-emergency?si=822204195b56421c8544600854ad1764&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
+title: Novowinds' Notes from The Little Red Dot Trailer
+category: Music Production
+year: 2025
+description: Co-produced music for the promo trailer for NOVOwinds' 2025 Beautiful Sunday Concert : Notes From The Little Red Dot.
+link: <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DMdpuGATxU7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Novo Winds (@novowinds)</a></p></div></blockquote> <script async src="https://www.instagram.com/embed.js"></script>
+crop_left: 0
+crop_top: 0
+crop_right: 0
+crop_bottom: 0
