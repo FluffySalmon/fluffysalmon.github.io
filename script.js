@@ -186,7 +186,7 @@ function buildEmbed(raw, title, crop = {}) {
     ].filter(Boolean).join('');
     return `<div class="embed-crop"><div style="${innerStyle}">${innerHtml}</div></div>`;
   }
-
+  /**
   if (raw.trimStart().startsWith('<blockquote')) {
     // The CSV parser strips internal " chars from unquoted fields, so
     // data-instgrm-permalink may appear with or without surrounding quotes.
@@ -209,6 +209,7 @@ function buildEmbed(raw, title, crop = {}) {
       </a>
     </div>`;
   }
+  **/
 
   const url = raw.trim();
 
@@ -221,7 +222,7 @@ function buildEmbed(raw, title, crop = {}) {
     </div>`;
   }
 
- if (url.includes('soundcloud.com')) {
+  if (url.includes('soundcloud.com')) {
     // Default options (can be overridden)
     const settings = {
       width: '100%',
@@ -262,9 +263,7 @@ function buildEmbed(raw, title, crop = {}) {
   }
 
   if (url.includes('instagram.com') && url.includes('blockquote')) {
-    return `<div class="instagram-container">
-      "${url}" 
-    </div>`;
+    return `<div class="instagram-container"> ${url} </div>`;
   }
 
   if (url.includes('instagram.com')) {
