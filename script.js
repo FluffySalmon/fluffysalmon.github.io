@@ -52,7 +52,7 @@ addEventListener('load', reveal);
 const form = document.querySelector('.contact-form');
 if (form) {
   const action="https://api.web3forms.com/submit";
-  const access_key = "e0d19a99-adfc-4c09-abed-78d367e57bcf";
+  const access_key = "f9d6cabc-1079-4708-926c-445f8f2ceb65";
   const btn = form.querySelector('button[type="submit"]');
   if (btn) btn.onclick = async e => {
     e.preventDefault();
