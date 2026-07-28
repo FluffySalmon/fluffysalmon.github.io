@@ -401,11 +401,12 @@ audio {
 .contact {
   align-items: start;
 }
-
+/*
 .contact-text p {
   color: var(--muted);
   margin-bottom: 16px;
 }
+*/
 
 .contact-link-item {
   margin-bottom: 12px;
