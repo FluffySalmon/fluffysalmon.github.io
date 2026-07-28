@@ -8,21 +8,21 @@ crop_top: 0
 crop_right: 0
 crop_bottom: 0
 
-title: Night Time Drive 
-category: Vapourwave Instrumental music track
-year: 2024-2025
-description: A lower energy, vapourwave inspired instrumental track that reflects what driving at a city at night feels like. Orginally made for an ambient/idle state in a level in a student game's project.
-link: https://soundcloud.com/audie-363288170/night-time-drive?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_left:
-crop_top:
-crop_right:
-crop_bottom:
-
 title: The Overton Window by Ricardo Molla
 category: Piano and Solo Trumpet Duet
 year: 2024
 description: A recording of the Overton Window, by Ricardo Molla, from Novowinds' Chamber Affairs #2 on 16th Feb 2024. Written for Solo Trumpet and Piano. Performed by Naqib Solihin Bin Azman on the trumpet and Chloe Chan on the Piano.
 link: https://youtu.be/bzHma3Gzqlc
+crop_left:
+crop_top:
+crop_right:
+crop_bottom:
+
+title: Night Time Drive 
+category: Vapourwave Instrumental music track
+year: 2024-2025
+description: A lower energy, vapourwave inspired instrumental track that reflects what driving at a city at night feels like. Orginally made for an ambient/idle state in a level in a student game's project.
+link: https://soundcloud.com/audie-363288170/night-time-drive?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_left:
 crop_top:
 crop_right:
@@ -51,14 +51,6 @@ category: Electroswing Instrumental Music Track
 year: 2021
 description: A high energy music track orginally made for a final project for school. Highly inspired by the Electroswing genre and Big band music. Features live instruments such as a solo saxophone and jazz drums alongside MIDI. 
 link: https://soundcloud.com/audie-363288170/lets-bounce?si=ffd308ca2eb44804857a1c5d3fb210a4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
-crop_right:
-crop_bottom:
-
-title: More short lo-fi beats to eat dinner with 
-category: Lo-fi Accoustic Insturmental Music Track.
-year: 2024
-description: A low energy music track that was orignally made for a game's menu theme. Highly inpsired by the Lo-fi genre , mixed with standard Jazz instruments and accompiment.  
-link: https://soundcloud.com/audie-363288170/more-short-lo-fi-beats-to-eat?  si=7ea086ec1e6f4eca99bc4cef1ea19be8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_right:
 crop_bottom:
 
@@ -98,7 +90,7 @@ title: Searching On A Stormy Sea
 category: Orcehstral Based Movie Soundtrack
 year: Produced 2023, released 2026
 description: A track made for a scoring assignment for a scene in the Atlantis movie.  Due to copyright, only the audio is released. The use of moving strings invoke the feeling of movement as the ship sailed into a storm. The later instruments come in with a dark chord tone as the tensions raised higher on the ship as they are unable to find the monster.  The later part has exchanging triplets to mimic sea waves and swaying in the rocky sea.  The rising and dropping scale follows a huge monster jumping and diving into the sea. It ending on a triumphant tone as the crew now sees the monster and looks for it again.
-link: https://soundcloud.com/audie-363288170/a-heros-fall?si=5a6ffbc25f834b6891248e5805bc9177&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+link: https://soundcloud.com/audie-363288170/searching-on-a-stormy-sea?si=c605dd1ffcf746408a567b662c22021e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
 crop_right:
 crop_bottom:
 
@@ -166,6 +158,13 @@ link:https://soundcloud.com/audie-363288170/a-childs-summer?si=de12f0b55bef463ab
 crop_right:
 crop_bottom:
 
+title: More short lo-fi beats to eat dinner with 
+category: Lo-fi Accoustic Insturmental Music Track.
+year: 2024
+description: A low energy music track that was orignally made for a game's menu theme. Highly inpsired by the Lo-fi genre , mixed with standard Jazz instruments and accompiment.  
+link: https://soundcloud.com/audie-363288170/more-short-lo-fi-beats-to-eat?  si=7ea086ec1e6f4eca99bc4cef1ea19be8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+crop_right:
+crop_bottom:
 
 
 
